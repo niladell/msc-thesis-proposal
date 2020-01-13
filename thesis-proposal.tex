@@ -1,0 +1,332 @@
+\documentclass{article}
+
+\usepackage{geometry}
+\geometry{verbose,a4paper,tmargin=15mm,bmargin=25mm,lmargin=25mm,rmargin=25mm}
+\newcommand{\dataset}{{\cal D}}
+\newcommand{\fracpartial}[2]{\frac{\partial #1}{\partial  #2}}
+\setlength{\parindent}{0pt}
+
+% For quoting
+\usepackage{dirtytalk}
+
+\usepackage{nameref}
+
+% For enumerations
+\usepackage{enumerate}
+
+\usepackage[normalem]{ulem} %to strike the words
+
+% For manageable columns
+\usepackage{multicol}
+\setlength\columnsep{18pt} 
+
+% For strikethroughs
+\usepackage{soul}
+
+% To format the section titles nicely (not yet perfect)
+\usepackage{titlesec}
+\titleformat{\section}{\Large\sffamily}
+\titleformat{\subsection}{\Large\sffamily}
+\titlespacing{\section}{0pt}{\parskip}{-\parskip}
+\titlespacing{\subsection}{0pt}{\parskip}{-\parskip}
+\titlespacing{\subsubsection}{0pt}{\parskip}{-\parskip}
+
+% For distance between figures/tables and their caption
+\usepackage[font=small,skip=2pt]{caption}
+\captionsetup[table]{font=small,skip=4pt}
+
+% For distance between caption of figure/table and normal text
+\usepackage{etoolbox}
+\BeforeBeginEnvironment{figure}{\vskip-1ex}
+\AfterEndEnvironment{figure}{\vskip1ex}
+\BeforeBeginEnvironment{table}{\vskip-1ex}
+\AfterEndEnvironment{table}{\vskip-4ex}
+\usepackage{ulem}
+
+% Graphics package
+\usepackage{graphicx}
+\usepackage{float}
+% For nice plots??
+\usepackage{pgfplots}
+% For making hyperlinks dark blue
+\usepackage{color}
+%\usepackage[dvipsnames]{xcolor}
+\definecolor{myblue}{rgb}{0 0 0.8}
+\definecolor{grayishgray}{rgb}{0.5, 0.5, 0.5}
+
+%Math
+\usepackage{mathtools}
+\usepackage{amsmath}
+\DeclareMathOperator*{\argmax}{arg\,max}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{algorithm}
+\usepackage{algpseudocode}
+\usepackage{caption}
+\usepackage{subcaption}
+\usepackage{siunitx}
+
+% To allow interactive clicking on references 
+\usepackage{hyperref}
+\hypersetup{
+    colorlinks=true,
+    citecolor=myblue,
+    filecolor=myblue,
+    linkcolor=myblue,
+    urlcolor=myblue
+}
+
+% Allow footnotes with url
+\usepackage{hyperref}
+\newcommand\fnurl[2]{%
+\href{#2}{#1}\footnote{\url{#2}}%
+}
+
+\usepackage{fancyhdr}
+\usepackage{comment}
+
+%\pagestyle{fancy}
+%\fancyhf{}
+%\fancyhead[LE,RO]{Patrick Haller}
+%\fancyhead[RE,LO]{Master Thesis project proposal}
+%\fancyfoot[CE,CO]{\thepage}
+ 
+\begin{document}
+% \title{\vspace{-0.5cm}\LARGE Short project proposal \vspace{0.4cm} \\\huge Investigating privacy preserving and federated learning strategies for machine learning in healthcare}
+% \author{Nil Adell Mill\vspace{0.2cm}} %\\Supervision: -- \\ NSC-Professor: Prof. Klaas Enno Stephan}
+
+\title{\vspace{-0.5cm}\LARGE Thesis proposal \vspace{0.4cm} \\\huge My Thesis}
+\author{Nil Adell Mill\vspace{0.2cm}} %\\Supervision: -- \\ NSC-Professor: Prof. Klaas Enno Stephan}
+\date{Spring 2019}
+
+\maketitle
+%\thispagestyle{fancy}
+
+% \begin{multicols}{1}
+
+    \section*{Introduction}
+    % The introduction of Convolutional Neural Networks (CNNs) represented a change in
+    % paradigm with respect to how well were neural networks able to deal with image
+    % inputs. And with relatively few years from their introduction we have gone a long
+    % way. In fact, they have been successfully implemented—and used to solve
+    % problems—in fields such as NLP, Genomics, (and others I guess). Recently Graph
+    % Convolutional Neural Networks (GCNNs) where proposed as analogous, in graphs, to
+    % what CNNs are in images. The idea is to be able to process input graph data by
+    % analyzing first the local structure around the nodes and then expand up based on
+    % this aggregate information. In the same way CNNs first observe small patches to
+    % then grow their effective [  ] to the whole image. In fact, a CNN can be viewed as
+    % a GCNN over a lattice (2D one if we are talking about grayscale images a 3D one if
+    % we add color, 4D if we use temporal convolutions…), as such GCNNs try to deal with
+    % arbitrarily structured graphs.
+    
+    % The introduction of this approach then, has opened the door to rethinking many
+    % problems. One of such is protein interaction. In fact, the perspective of being
+    % able to model proteins and molecules as graphs and natively process such graphs
+    % opens the door to better algorithms. So far, the approach has been similar those
+    % used in NLP, where what is analyzed is the aminoacid sequence as a string or a
+    % molecule or drug as a SMILE sequence (for example). So there’s an interest on how
+    % adding structural information may improve machine learning applied to biological
+    % problems. Furthermore, it is not know if the introduction of GCNNs would per-se
+    % allow the learning of better representations of this biological data, even if the
+    % original input is still an aminoacid or SMILE sequence.
+    
+    % Based on the previous ideas stated above I want to propose a project with the aim
+    % of better understanding GCNNs and how they can be applied to biological processes.
+    % In particular, I want to evaluate how GCNNs can learn peptide-protein interactions
+    % and be used to predict binding affinity and membrane cell presentation. My target
+    % pathway is the immune machinery in charge of presenting epitopes in the membrane
+    % via the MHC-I proteins. 
+    
+    % I plan to develop the project in colaboration MyNeo, a company dedicated to
+    % immunotherapy treatments for cancer. They have a completely individualized
+    % approach to developing neo-epitope candidates for each of the patients. That
+    % approach requires the individual analysis of the genomic and phenotipic variation
+    % of the tumour of the patient, as well as, accounting for the particular
+    % interaction with the HLA of the patient. I believe that such an approach is teh
+    % perfrect training ground to where to analyze how a novel approach can help predict
+    % and understand how all these things come toguether
+    
+
+
+Drug discovery—the process by which a potential new medicine is identified—is a complex
+ process that encompases the intersection of several fields (such as biology, statistics,
+ chemistry or pharmacology). The entire process is a long and costly endeavour, with a
+ typical time-frame of 10 to 20 years till maket release and an estimated cost between 1
+ and 2 billion USD. With just a small quantity of the initially identified compounds
+ actually becoming an approved medicine. Many of these dropouts happening at the early
+ stages of the entire pipeline.
+
+It exists, then, a need for better mechanisms for detecting better candidates. One of
+ the most promising directions is to improve the currently used and develop new
+ \emph{in-silico} methods—computational simulations are relatively cheap and quick run
+ that makes them an interesting solution. In-silico simulations then cover two main
+ aspects: modelling the dynamics of the human body, such that any effect relevant to the
+ durg or the disease will be captured by it; and a mathod to generate good candidates
+ that is effective at exploring the vast space of possible compounds.
+
+
+% To do so, two main components are required: a model accurate enough of the human body,
+% such that it reflects reality properly; a way to generate good candidates that is
+% effective at exploring the vast space of possible compounds.
+
+% Those two components may be subdivided into smaller parts and abstracted in order to
+% account for different elements, for example, one may only look at ic50 as a metric for
+% drug response or one may try to generate new compounds by exploring compounds
+% chemically similar to already in use drugs. At the same time, many different methods
+% may be used to tackle all these questions.
+
+
+Among the different computational approaches that have been used in the process of drug
+ discovery deep learning (DL) has shown signs to be a potential game changer. DL has
+ been able to capitalize on the exponential growth of data and the higher availability
+ of computational resources. For examle, DL has had a remarkable success on computer
+ vision (CV) and natural language processing (NLP), and has become the go-to solution
+ for any problem in these two fields. It is, at the same time, penetrating into other
+ fields, drug-discovery being one of them \cite{Chen2018}. 
+
+One of the big challenges is to unify all the aspects of drug-discovery and be able to
+ incorporate all the rellevant biological information when designing possible candidate
+ molecules. A success story on that line is the recently paper published by Zhavoronkov
+ et al. \cite{Zhavoronkov2019} where the authors describe a deep learning method by
+ which they are able to discover inhibitors of discoidin domain receptor 1 (DDR1)—a
+ kinase implicated in fibrosis—in just 21 days.
+
+Those promising results, albeit encouraging, are just the tip of the iceberg. There is
+still a long way till a model can satisfactorily capture the biological complexity of
+any arbitrary target and produce promising candidates. On top of that, there is an added
+dimension as such model should account for the variability from patient to patient and
+be able to generate a molecule that accomodates for all the genotipic and phenotipic
+variants, or generate different candidates for each of the genetic populations of
+interest. [need a ref here]
+
+Even more, in the case of diseases like cancer, an heterogeneous population may appear
+within a single patient. So the same variant effects arise inside a dynamic ecosystem,
+where a drug that just targets a subpopulation may lead to an evolutionary pressure
+complicating further the treatment outlook [reference paper of evolutionary perspective
+to cancer].
+
+There is then a great need to develop models that can be conditioned based on a large
+set of biological [conditions?] and meaningfully account for this variatos when
+generating a compound or/and evaluating a compunds effect when administered.
+
+The aim of this thesis will be to explore several ways to tackle this challenge.
+
+% Among the pleathora of techniques to be explored in order to improve models we will be
+%  focusing on how information from graph structures can be extracted and used for these
+%  pourposes. In partucular stuidying protein protein interaction (PPI) networks may
+%  unravel relationships in the cell that are being not currently taken into account when
+%  analyzing a perturbation in the system—for instance introducing a drug or knocking out
+%  a particular protein. Some papers [paper jannis mentioned in the email] have already
+%  indicated that that may be the casee...\dots
+
+% Another case to look at would be to model the proteins itself in a  way that represents
+%  them in a more complete way?[more natural way], explicitly accounting for their
+%  structure and how different parts of it may interact. A successful example of that: Deep
+%  learning enables rapid identification of potent DDR1 kinase inhibitors has recently been
+%  published in the literature and opens the door for further improvements on the
+%  biological modelling....
+
+---
+
+Deep learning has been applied very successfully in many fields, notably computer vision
+ (CV) and natural language processing (NLP), among those filelds .... 
+ 
+ graph convolutional neural networks. We plan to 
+
+---
+
+Analyzing graph like structures allows us to 
+
+
+
+    
+    \section*{Aim}
+    
+    % I believe that the mentioned problems can be tackled through a
+    % series of distributed privacy-preserving strategies. The idea is to
+    % try to overcome the barriers that constrain data sharing without compromising on privacy while, at the same time, allowing for distributed training of models—a philosophy of bringing the model to the data instead of the data to the model. This approach has the extra benefit of loosening the computational needs when training deep learning models. So, in general, my hypothesis is that making privacy and decentralization a core feature of the system will easen research while bringing security to the patient.
+    % % !!! research is done, % easening research while making privacy a core feature of this research.
+    
+    % In practice, this gets translated into three verticals or three main lines of research:
+    
+    % 1) Differential privacy
+    
+    % 2) Federated learning strategies
+    
+    % 3) Encrypted deep learning
+    
+    % On my project, I am going to focus on points (1) and (2). This more specifically
+    % means that, on the one side, I aim to develop a prototype of an end-to-end solution
+    % that integrates a federated strategy. With this approach, an entity can train a
+    % model on a set of data sources (from databases to individual devices as smartphones)
+    % without ever having to get a centralized copy of the data. Such thing can be
+    % accomplished by bringing the model to the holders of that data, so the data never
+    % has to leave the original location. On the other side, I will evaluate how to
+    % effectively perform differential privacy (DP) when querying the data. That is, how
+    % to ensure that using DP will not compromise the model's performance in comparison to
+    % its non-private counterpart while maintaining the privacy of the data. As a
+    % particular aspect of that privacy concern, we want to be able to give guaranties
+    % that it is not possible to reconstruct any part of the original data based on the
+    % model or the model's output \cite{remember-too-much, privacy-leak, Sweeney}.
+
+    % \section*{Methods}
+    % \subsection*{Differential Privacy}
+    % There have been several proposals in the literature on how to properly implement DP.
+    % I will particularly focus on {\em Private Aggregation of Teacher Ensembles} (PATE)
+    % \cite{pate} and it's generative variant, PATE-G. In PATE, the data is used to train
+    % a set of teacher models, the aggregated output of which will be used as a method to
+    % train a student model—our actual prediction model. So, we end up operating in a
+    % framework where the data and the model are not directly connected. My task will be
+    % to study the robustness and utility of this system outside toy setups. Specifically,
+    % I will see how it can be used over genetic data and replicate literature results
+    % where this methodology was not used—such that we can evaluate the performance of
+    % this approach against the reported results in the literature. I plan to constrain
+    % the literature to a particular topic. As a starting point, I will investigate the
+    % integration of this framework to the topic of genomics and neurodevelopmental
+    % disorders \cite{genomics-neuro}, more specifically, my focus is going to be on
+    % genome-wide association methods \cite{genomics-autism, autism-dl, zhou2, ml-autism}.
+    % Nevertheless, the final details of the subtopic may change depending on a set of
+    % factors (i.e. replicability, dataset and model availability, computational power
+    % requirements, etc.) to be evaluated during the development of the project.
+    
+    % {\color{grayishgray}[I don't really want to marry and promise too much on a topic as what is important is the methods that I apply to it, not the topics "per se". However as how I wrote it sounds super vague and "weak"... idk at the end of the day literature review is part of the project...]}
+    
+    % \subsection*{Federated Learning}
+    % On the federated learning space, I will develop and evaluate a feasible prototype of a distributed system. I plan to build upon the results and solutions of the previous section. The initial approach will be to study and evaluate already proposed federated learning strategies \cite{fed-learning, fed-learning2} for generic types of data. Following that, I will develop on that base to generate a working framework for the specific models and data mentioned previously. 
+    
+    % This work will be first carried out in a simulated manner inside a virtual
+    % environment, with the aim of physical implementation—although that will likely
+    % fall outside the scope of this project due to time and resources constraints.
+    % Ultimately this project should serve as a proof of concept for a solution
+    % applicable in healthcare. 
+
+
+    
+    % {\color{red}\#\# NOTE: SHOULD I ADD THIS?} 
+    % \subsection*{Practicalities}
+    % The described work will be carried out at
+    % \emph{Decentriq}\footnote{https://decentriq.ch/} under the supervision of Stefan
+    % Deml. \emph{Decentriq} focuses its operations on combining machine learning and data
+    % analytics with cryptography and privacy preserving techniques to allow
+    % confidentiality when operating with private data.  Stefan is one of the co-founders
+    % of \emph{Decentriq}, he is an ETH Zürich graduate, he has previously co-founded an
+    % ETH Spin-off and worked for the Ethereum foundation.
+    
+    % All methods, software, and results will be open sourced.
+
+    % \subsection*{Something else?}
+    
+    % \section*{Software and Hardware Requirements}
+    % Outline what your specific requirements will be with regard
+    % to software and hardware, but note that any special requests
+    % might need to be approved by your supervisor and the Head of
+    % Department.
+    
+    % Overall, you should aim to produce roughly a two-page document
+    % (and certainly no more than four pages)
+    % outlining your plan for the year.
+    \bibliographystyle{plain}
+    \bibliography{thesis-proposal.bib}
+    
+% \end{multicols}
+\end{document}    
