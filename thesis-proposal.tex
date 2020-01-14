@@ -1,99 +1,113 @@
 \documentclass{article}
 
-\usepackage{geometry}
-\geometry{verbose,a4paper,tmargin=20mm,bmargin=25mm,lmargin=30mm,rmargin=30mm}
-\newcommand{\dataset}{{\cal D}}
-\newcommand{\fracpartial}[2]{\frac{\partial #1}{\partial  #2}}
-\setlength{\parindent}{0pt}
+% \usepackage{geometry}
+% \geometry{verbose,a4paper,tmargin=20mm,bmargin=25mm,lmargin=30mm,rmargin=30mm}
+% \newcommand{\dataset}{{\cal D}}
+% \newcommand{\fracpartial}[2]{\frac{\partial #1}{\partial  #2}}
+% \setlength{\parindent}{0pt}
 
-% For quoting
-\usepackage{dirtytalk}
+\usepackage[nonatbib]{neurips_2018}
 
-\usepackage{nameref}
+\usepackage[utf8]{inputenc} % allow utf-8 input
+\usepackage[T1]{fontenc}    % use 8-bit T1 fonts
+\usepackage{hyperref}       % hyperlinks
+\usepackage{url}            % simple URL typesetting
+\usepackage{booktabs}       % professional-quality tables
+\usepackage{amsfonts}       % blackboard math symbols
+\usepackage{nicefrac}       % compact symbols for 1/2, etc.
+\usepackage{microtype}      % microtypography
+\pagenumbering{gobble}
 
-% For enumerations
-\usepackage{enumerate}
+%%%%% START -- DEFAULT SETTINGS %%%%
+% % For quoting
+% \usepackage{dirtytalk}
+% \usepackage{nameref}
 
-\usepackage[normalem]{ulem} %to strike the words
+% % For enumerations
+% \usepackage{enumerate}
+% \usepackage[normalem]{ulem} %to strike the words
 
-% For manageable columns
-\usepackage{multicol}
-% \setlength\columnsep{18pt} 
+% % For manageable columns
+% \usepackage{multicol}
+% % \setlength\columnsep{18pt} 
 
-% For strikethroughs
-\usepackage{soul}
+% % For strikethroughs
+% \usepackage{soul}
 
-% To format the section titles nicely (not yet perfect)
-\usepackage{titlesec}
-\titleformat{\section}{\Large\sffamily}
-\titleformat{\subsection}{\Large\sffamily}
-\titlespacing{\section}{0pt}{\parskip}{-\parskip}
-\titlespacing{\subsection}{0pt}{\parskip}{-\parskip}
-\titlespacing{\subsubsection}{0pt}{\parskip}{-\parskip}
+% % To format the section titles nicely (not yet perfect)
+% \usepackage{titlesec}
+% \titleformat{\section}{\Large\sffamily}
+% \titleformat{\subsection}{\Large\sffamily}
+% \titlespacing{\section}{0pt}{\parskip}{-\parskip}
+% \titlespacing{\subsection}{0pt}{\parskip}{-\parskip}
+% \titlespacing{\subsubsection}{0pt}{\parskip}{-\parskip}
 
-% For distance between figures/tables and their caption
-\usepackage[font=small,skip=2pt]{caption}
-\captionsetup[table]{font=small,skip=4pt}
+% % For distance between figures/tables and their caption
+% \usepackage[font=small,skip=2pt]{caption}
+% \captionsetup[table]{font=small,skip=4pt}
 
-% For distance between caption of figure/table and normal text
-\usepackage{etoolbox}
-\BeforeBeginEnvironment{figure}{\vskip-1ex}
-\AfterEndEnvironment{figure}{\vskip1ex}
-\BeforeBeginEnvironment{table}{\vskip-1ex}
-\AfterEndEnvironment{table}{\vskip-4ex}
-\usepackage{ulem}
+% % For distance between caption of figure/table and normal text
+% \usepackage{etoolbox}
+% \BeforeBeginEnvironment{figure}{\vskip-1ex}
+% \AfterEndEnvironment{figure}{\vskip1ex}
+% \BeforeBeginEnvironment{table}{\vskip-1ex}
+% \AfterEndEnvironment{table}{\vskip-4ex}
+% \usepackage{ulem}
 
-% Graphics package
-\usepackage{graphicx}
-\usepackage{float}
-% For nice plots??
-\usepackage{pgfplots}
-% For making hyperlinks dark blue
-\usepackage{color}
-%\usepackage[dvipsnames]{xcolor}
-\definecolor{myblue}{rgb}{0 0 0.8}
-\definecolor{grayishgray}{rgb}{0.5, 0.5, 0.5}
+% % Graphics package
+% \usepackage{graphicx}
+% \usepackage{float}
+% % For nice plots??
+% \usepackage{pgfplots}
+% % For making hyperlinks dark blue
+% \usepackage{color}
+% %\usepackage[dvipsnames]{xcolor}
+% \definecolor{myblue}{rgb}{0 0 0.8}
+% \definecolor{grayishgray}{rgb}{0.5, 0.5, 0.5}
 
-%Math
-\usepackage{mathtools}
-\usepackage{amsmath}
-\DeclareMathOperator*{\argmax}{arg\,max}
-\usepackage{amsfonts}
-\usepackage{amssymb}
-\usepackage{algorithm}
-\usepackage{algpseudocode}
-\usepackage{caption}
-\usepackage{subcaption}
-\usepackage{siunitx}
+% %Math
+% \usepackage{mathtools}
+% \usepackage{amsmath}
+% \DeclareMathOperator*{\argmax}{arg\,max}
+% \usepackage{amsfonts}
+% \usepackage{amssymb}
+% \usepackage{algorithm}
+% \usepackage{algpseudocode}
+% \usepackage{caption}
+% \usepackage{subcaption}
+% \usepackage{siunitx}
 
-% To allow interactive clicking on references 
-\usepackage{hyperref}
-\hypersetup{
-    colorlinks=true,
-    citecolor=myblue,
-    filecolor=myblue,
-    linkcolor=myblue,
-    urlcolor=myblue
-}
+% % To allow interactive clicking on references 
+% \usepackage{hyperref}
+% \hypersetup{
+%     colorlinks=true,
+%     citecolor=myblue,
+%     filecolor=myblue,
+%     linkcolor=myblue,
+%     urlcolor=myblue
+% }
 
-% Allow footnotes with url
-\usepackage{hyperref}
-\newcommand\fnurl[2]{%
-\href{#2}{#1}\footnote{\url{#2}}%
-}
+% % Allow footnotes with url
+% \usepackage{hyperref}
+% \newcommand\fnurl[2]{%
+% \href{#2}{#1}\footnote{\url{#2}}%
+% }
 
-\usepackage{fancyhdr}
-\usepackage{comment}
+% \usepackage{fancyhdr}
+% \usepackage{comment}
 
 %\pagestyle{fancy}
 %\fancyhf{}
 %\fancyhead[LE,RO]{Patrick Haller}
 %\fancyhead[RE,LO]{Master Thesis project proposal}
 %\fancyfoot[CE,CO]{\thepage}
- 
+%%%%% END -- DEFAULT SETTINGS  %%%%%
+
 \begin{document}
-% \title{\vspace{-0.5cm}\LARGE Short project proposal \vspace{0.4cm} \\\huge Investigating privacy preserving and federated learning strategies for machine learning in healthcare}
-% \author{Nil Adell Mill\vspace{0.2cm}} %\\Supervision: -- \\ NSC-Professor: Prof. Klaas Enno Stephan}
+% \title{\vspace{-0.5cm}\LARGE Short project proposal \vspace{0.4cm} \\\huge
+% Investigating privacy preserving and federated learning strategies for machine
+% learning in healthcare} \author{Nil Adell Mill\vspace{0.2cm}} %\\Supervision: -- \\
+% NSC-Professor: Prof. Klaas Enno Stephan}
 
 \title{\vspace{-0.5cm}\LARGE Thesis proposal \vspace{0.4cm} \\\huge My Thesis}
 \author{Nil Adell Mill\vspace{0.2cm}} %\\Supervision: -- \\ NSC-Professor: Prof. Klaas Enno Stephan}
