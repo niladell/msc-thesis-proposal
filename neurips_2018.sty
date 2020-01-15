@@ -44,7 +44,8 @@
 \ProcessOptions\relax
 
 % determine whether this is an anonymized submission
-\newif\if@submission\@submissiontrue
+% We dont anonymize at all % @submissiontrue
+\newif\if@submission\@submissionfalse
 \if@neuripsfinal\@submissionfalse\fi
 \if@preprint\@submissionfalse\fi
 

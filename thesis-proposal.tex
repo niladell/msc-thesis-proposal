@@ -18,7 +18,7 @@
 \usepackage{microtype}      % microtypography
 \pagenumbering{gobble}
 
-%%%%% START -- DEFAULT SETTINGS %%%%
+%%%%% START --- DEFAULT SETTINGS %%%%
 % % For quoting
 % \usepackage{dirtytalk}
 % \usepackage{nameref}
@@ -101,16 +101,18 @@
 %\fancyhead[LE,RO]{Patrick Haller}
 %\fancyhead[RE,LO]{Master Thesis project proposal}
 %\fancyfoot[CE,CO]{\thepage}
-%%%%% END -- DEFAULT SETTINGS  %%%%%
+%%%%% END --- DEFAULT SETTINGS  %%%%%
 
 \begin{document}
 % \title{\vspace{-0.5cm}\LARGE Short project proposal \vspace{0.4cm} \\\huge
 % Investigating privacy preserving and federated learning strategies for machine
-% learning in healthcare} \author{Nil Adell Mill\vspace{0.2cm}} %\\Supervision: -- \\
+% learning in healthcare} \author{Nil Adell Mill\vspace{0.2cm}} %\\Supervision: --- \\
 % NSC-Professor: Prof. Klaas Enno Stephan}
 
-\title{\vspace{-0.5cm}\LARGE Thesis proposal \vspace{0.4cm} \\\huge My Thesis}
-\author{Nil Adell Mill\vspace{0.2cm}} %\\Supervision: -- \\ NSC-Professor: Prof. Klaas Enno Stephan}
+\title{\Large Thesis proposal \\ \small An alpha version of the draft}
+\author{Nil Adell Mill \\
+        Winter 2020 \\
+        Institute of Neuroinformatics \\}
 \date{Spring 2019}
 
 \maketitle
@@ -120,7 +122,7 @@
 
 % \begin{multicols}{1}
 
-    \section*{Introduction}
+    \section*{Introduction/Background}
     % The introduction of Convolutional Neural Networks (CNNs) represented a change in
     % paradigm with respect to how well were neural networks able to deal with image
     % inputs. And with relatively few years from their introduction we have gone a long
@@ -164,7 +166,7 @@
     
 
 
-Drug discovery—the process by which a potential new medicine is identified--is a complex
+Drug discovery—the process by which a potential new medicine is identified---is a complex
  process that encompases the intersection of several fields (such as biology, statistics,
  chemistry or pharmacology). The entire process is a long and costly endeavour, with a
  typical time-frame of 10 to 20 years till maket release and an estimated cost between 1
@@ -173,12 +175,12 @@ Drug discovery—the process by which a potential new medicine is identified--is
  stages of the entire pipeline.
 
 It exists, then, a need for better mechanisms for detecting better candidates. One of
- the most promising directions is to improve the currently used and develop new
- \emph{in-silico} methods—computational simulations are relatively cheap and quick run
- that makes them an interesting solution. In-silico simulations then cover two main
- aspects: modelling the dynamics of the human body, such that any effect relevant to the
- durg or the disease will be captured by it; and a mathod to generate good candidates
- that is effective at exploring the vast space of possible compounds.
+ the most promising directions is to improve the \emph{in-silico} methods---computational
+ simulations are relatively cheap and quick run that makes them an interesting solution.
+ \emph{In-silico} simulations then cover two main aspects: modelling the dynamics of the
+ human body---such that any effect relevant to the durg or the disease will be captured
+ by it---and methods to generate good candidates that are effective at exploring the
+ vast space of possible compounds.
 
 
 % To do so, two main components are required: a model accurate enough of the human body,
@@ -200,47 +202,77 @@ Among the different computational approaches that have been used in the process 
  for any problem in these two fields. It is, at the same time, penetrating into other
  fields, drug-discovery being one of them \cite{Chen2018}. 
 
-One of the big challenges is to unify all the aspects of drug-discovery and be able to
- incorporate all the rellevant biological information when designing possible candidate
- molecules. A success story on that line is the recently paper published by Zhavoronkov
- et al. \cite{Zhavoronkov2019} where the authors describe a deep learning method by
- which they are able to discover inhibitors of discoidin domain receptor 1 (DDR1)—a
- kinase implicated in fibrosis—in just 21 days.
+When we deal with this biological and molecular data, it exists a challenge on how to
+ deal with the intrinsic structure of the data.
+%  When it comes to the methodology it exists an orthogonal problem [regarding strcutured 
+%  data] when we deal with biological data.
+ If we look at the case of deep learning for CV, where we deal with images, a key
+ element of any architecture for it's success was the use of convolutional layers---one
+ will mostly observe convolutional neural networks (CNNs) when analizying the state of
+ the art in CV---which introduce a structural a prior based on the structure of the
+ data. A similar case can be made for NLP. For that reason, there exists a strong signal
+ to look for models that can leverage the structural equivalent when in molecule or
+ protein data, i.e. leverage graph structures. Sign [Sign? need to rewrite that] of that
+ is the recent advancements in that direction \cite{Sun2019}.
+ 
+%  [There is already a literature on this and I'm gonna talk about it \cite{Sun2019}]
+
+Another of the big challenges is to unify all the aspects of drug-discovery and be able
+ to incorporate all the rellevant biological information when designing possible
+ candidate molecules. An initial success story on that line is the recently paper
+ published by Zhavoronkov et al. \cite{Zhavoronkov2019} where the authors describe a
+ deep learning method by which they are able to discover inhibitors of discoidin domain
+ receptor 1 (DDR1)—a kinase implicated in fibrosis—in just 21 days.
 
 Those promising results, albeit encouraging, are just the tip of the iceberg. There is
 still a long way till a model can satisfactorily capture the biological complexity of
 any arbitrary target and produce promising candidates. On top of that, there is an added
-dimension as such model should account for the variability from patient to patient and
+dimension, as such model should account for the variability from patient to patient and
 be able to generate a molecule that accomodates for all the genotipic and phenotipic
 variants, or generate different candidates for each of the genetic populations of
 interest. [need a ref here]
 
-Even more, in the case of diseases like cancer, an heterogeneous population may appear
-within a single patient. So the same variant effects arise inside a dynamic ecosystem,
-where a drug that just targets a subpopulation may lead to an evolutionary pressure
-complicating further the treatment outlook [reference paper of evolutionary perspective
-to cancer].
+[I am not completely sure about this paragraph but I leave it here so I don't forget for
+now] Even more, in the case of diseases like cancer, an heterogeneous population may
+appear within a single patient. So the same variant effects arise inside a dynamic
+ecosystem, where a drug that just targets a subpopulation may lead to an evolutionary
+pressure complicating further the treatment outlook [reference paper of evolutionary
+perspective to cancer].
 
 There is then a great need to develop models that can be conditioned based on a large
-set of biological [conditions?] and meaningfully account for this variatos when
+set of biological [conditions?] and meaningfully account for this variations when
 generating a compound or/and evaluating a compunds effect when administered.
 
-----
+In fact it is of interest to develop multi-scale models that capture system complexity
+at the different levels. For instance, a model that is able to learn protein-compound
+interactions---commonly known as the docking problem---while at the same time use this
+information to predict effects of the introduction of the compound on the larger
+protein-protein interaction (PPI) network.
 
-When it comes to the methodology it exists an orthogonal problem [regarding strcutured
-data] when we deal with biological data. If we look at the case of deep learning for CV,
-where we deal with images, a key element of any architecture for it's success was the
-use of convolutional layers--one will mostly observe convolutional neural networks
-(CNNs) when analizying the state of the art in CV--which introduce a structural a pripor
-based on the structure of the input. A similar case can be made for NLP. For that
-reason, there exists a strong signal to look for models that can leverage the structural
-equivalent when in molecule or protein data, i.e. leverage graph structures.
+------
 
-[There is already a literature on this and I'm gonna talk about it \cite{Sun2019}]
+\section*{Aim \& Methods}
+[Should I separate em in two different sections?]
 
-----
+The aim of this thesis will be two fold. One the one side, analyze how the explicit use
+of graph convolutional neural networks (CGNNs) may open new oportunities when dealing
+with biological and checmical data. On the other side, explore how modelling the biology
+at different levels (e.g. molecular structure v.s. molecular interacton network [okay
+here I need to develop furhter about PPI, maybe mention NetBite (as Jannis referenced in
+the mail)]) may help with our understanding [of the biology? of compounds interaction?]
+and help generate better models. Furthermore, evaluate how these may be integrated
+toguether.
 
-The aim of this thesis will be to explore several ways to tackle this challenge.
+GCNNs: 
+
+Multi-level:
+
+This precise work will be focused around exploring all these concepts in the context of
+drug design for cancer [...] the work will be done in colaboration with the
+Computational Systems Biology group at IBM Research (Zurich). [...] The group is
+currently focused on individualised paediatric cure (iPC), so an end gola of this
+project if for the end results of this project to help in that effor, for instance in
+contibuting to the ongoing research in neuroblastoma.
 
 % Among the pleathora of techniques to be explored in order to improve models we will be
 %  focusing on how information from graph structures can be extracted and used for these
@@ -257,53 +289,8 @@ The aim of this thesis will be to explore several ways to tackle this challenge.
 %  published in the literature and opens the door for further improvements on the
 %  biological modelling....
 
----
-
-Deep learning has been applied very successfully in many fields, notably computer vision
- (CV) and natural language processing (NLP), among those filelds .... 
- 
- graph convolutional neural networks. We plan to 
-
----
-
-Analyzing graph like structures allows us to 
 
 
-
-    
-\section*{Aim}
-
-The aim of my thesis will be to explore how deep learning applied to the domain of
-graphs can help capture better biological aspects 
-
-
-
-% I believe that the mentioned problems can be tackled through a
-% series of distributed privacy-preserving strategies. The idea is to
-% try to overcome the barriers that constrain data sharing without compromising on privacy while, at the same time, allowing for distributed training of models—a philosophy of bringing the model to the data instead of the data to the model. This approach has the extra benefit of loosening the computational needs when training deep learning models. So, in general, my hypothesis is that making privacy and decentralization a core feature of the system will easen research while bringing security to the patient.
-% % !!! research is done, % easening research while making privacy a core feature of this research.
-
-% In practice, this gets translated into three verticals or three main lines of research:
-
-% 1) Differential privacy
-
-% 2) Federated learning strategies
-
-% 3) Encrypted deep learning
-
-% On my project, I am going to focus on points (1) and (2). This more specifically
-% means that, on the one side, I aim to develop a prototype of an end-to-end solution
-% that integrates a federated strategy. With this approach, an entity can train a
-% model on a set of data sources (from databases to individual devices as smartphones)
-% without ever having to get a centralized copy of the data. Such thing can be
-% accomplished by bringing the model to the holders of that data, so the data never
-% has to leave the original location. On the other side, I will evaluate how to
-% effectively perform differential privacy (DP) when querying the data. That is, how
-% to ensure that using DP will not compromise the model's performance in comparison to
-% its non-private counterpart while maintaining the privacy of the data. As a
-% particular aspect of that privacy concern, we want to be able to give guaranties
-% that it is not possible to reconstruct any part of the original data based on the
-% model or the model's output \cite{remember-too-much, privacy-leak, Sweeney}.
 
 % \section*{Methods}
 % \subsection*{Differential Privacy}
@@ -361,7 +348,7 @@ graphs can help capture better biological aspects
 % Overall, you should aim to produce roughly a two-page document
 % (and certainly no more than four pages)
 % outlining your plan for the year.
-\bibliographystyle{plain}
+\bibliographystyle{apalike}
 \bibliography{thesis-proposal.bib}
     
 % \end{multicols}
