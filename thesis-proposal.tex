@@ -18,96 +18,7 @@
 \usepackage{microtype}      % microtypography
 \pagenumbering{gobble}
 
-%%%%% START --- DEFAULT SETTINGS %%%%
-% % For quoting
-% \usepackage{dirtytalk}
-% \usepackage{nameref}
-
-% % For enumerations
-% \usepackage{enumerate}
-% \usepackage[normalem]{ulem} %to strike the words
-
-% % For manageable columns
-% \usepackage{multicol}
-% % \setlength\columnsep{18pt} 
-
-% % For strikethroughs
-% \usepackage{soul}
-
-% % To format the section titles nicely (not yet perfect)
-% \usepackage{titlesec}
-% \titleformat{\section}{\Large\sffamily}
-% \titleformat{\subsection}{\Large\sffamily}
-% \titlespacing{\section}{0pt}{\parskip}{-\parskip}
-% \titlespacing{\subsection}{0pt}{\parskip}{-\parskip}
-% \titlespacing{\subsubsection}{0pt}{\parskip}{-\parskip}
-
-% % For distance between figures/tables and their caption
-% \usepackage[font=small,skip=2pt]{caption}
-% \captionsetup[table]{font=small,skip=4pt}
-
-% % For distance between caption of figure/table and normal text
-% \usepackage{etoolbox}
-% \BeforeBeginEnvironment{figure}{\vskip-1ex}
-% \AfterEndEnvironment{figure}{\vskip1ex}
-% \BeforeBeginEnvironment{table}{\vskip-1ex}
-% \AfterEndEnvironment{table}{\vskip-4ex}
-% \usepackage{ulem}
-
-% % Graphics package
-% \usepackage{graphicx}
-% \usepackage{float}
-% % For nice plots??
-% \usepackage{pgfplots}
-% % For making hyperlinks dark blue
-% \usepackage{color}
-% %\usepackage[dvipsnames]{xcolor}
-% \definecolor{myblue}{rgb}{0 0 0.8}
-% \definecolor{grayishgray}{rgb}{0.5, 0.5, 0.5}
-
-% %Math
-% \usepackage{mathtools}
-% \usepackage{amsmath}
-% \DeclareMathOperator*{\argmax}{arg\,max}
-% \usepackage{amsfonts}
-% \usepackage{amssymb}
-% \usepackage{algorithm}
-% \usepackage{algpseudocode}
-% \usepackage{caption}
-% \usepackage{subcaption}
-% \usepackage{siunitx}
-
-% % To allow interactive clicking on references 
-% \usepackage{hyperref}
-% \hypersetup{
-%     colorlinks=true,
-%     citecolor=myblue,
-%     filecolor=myblue,
-%     linkcolor=myblue,
-%     urlcolor=myblue
-% }
-
-% % Allow footnotes with url
-% \usepackage{hyperref}
-% \newcommand\fnurl[2]{%
-% \href{#2}{#1}\footnote{\url{#2}}%
-% }
-
-% \usepackage{fancyhdr}
-% \usepackage{comment}
-
-%\pagestyle{fancy}
-%\fancyhf{}
-%\fancyhead[LE,RO]{Patrick Haller}
-%\fancyhead[RE,LO]{Master Thesis project proposal}
-%\fancyfoot[CE,CO]{\thepage}
-%%%%% END --- DEFAULT SETTINGS  %%%%%
-
 \begin{document}
-% \title{\vspace{-0.5cm}\LARGE Short project proposal \vspace{0.4cm} \\\huge
-% Investigating privacy preserving and federated learning strategies for machine
-% learning in healthcare} \author{Nil Adell Mill\vspace{0.2cm}} %\\Supervision: --- \\
-% NSC-Professor: Prof. Klaas Enno Stephan}
 
 \title{\Large Thesis proposal \\ \small An alpha version of the draft}
 \author{Nil Adell Mill \\
@@ -116,11 +27,6 @@
 \date{Spring 2019}
 
 \maketitle
-% \begin{multicols}{1}
-
-%\thispagestyle{fancy}
-
-% \begin{multicols}{1}
 
     \section*{Introduction/Background}
     % The introduction of Convolutional Neural Networks (CNNs) represented a change in
@@ -166,21 +72,21 @@
     
 
 
-Drug discovery—the process by which a potential new medicine is identified---is a complex
- process that encompases the intersection of several fields (such as biology, statistics,
- chemistry or pharmacology). The entire process is a long and costly endeavour, with a
- typical time-frame of 10 to 20 years till maket release and an estimated cost between 1
- and 2 billion USD. With just a small quantity of the initially identified compounds
- actually becoming an approved medicine. Many of these dropouts happening at the early
- stages of the entire pipeline.
+Drug discovery—the process by which a potential new medicine is identified---is a
+ complex process that encompases the intersection of several fields (such as biology,
+ statistics, chemistry or pharmacology). The entire process is a long and costly
+ endeavour, with a typical time-frame of 10 to 20 years till maket release and an
+ estimated cost between 1 and 2 billion USD. With just a small quantity of the initially
+ identified compounds actually becoming an approved medicine. Many of these dropouts
+ happening at the early stages of the entire pipeline.
 
 It exists, then, a need for better mechanisms for detecting better candidates. One of
- the most promising directions is to improve the \emph{in-silico} methods---computational
- simulations are relatively cheap and quick run that makes them an interesting solution.
- \emph{In-silico} simulations then cover two main aspects: modelling the dynamics of the
- human body---such that any effect relevant to the durg or the disease will be captured
- by it---and methods to generate good candidates that are effective at exploring the
- vast space of possible compounds.
+ the most promising directions is to improve the \emph{in-silico}
+ methods---computational simulations are relatively cheap and quick run that makes them
+ an interesting solution. \emph{In-silico} simulations then cover two main aspects:
+ modelling the dynamics of the human body---such that any effect relevant to the durg or
+ the disease will be captured by it---and methods to generate good candidates that are
+ effective at exploring the vast space of possible compounds.
 
 
 % To do so, two main components are required: a model accurate enough of the human body,
@@ -204,8 +110,8 @@ Among the different computational approaches that have been used in the process 
 
 When we deal with this biological and molecular data, it exists a challenge on how to
  deal with the intrinsic structure of the data.
-%  When it comes to the methodology it exists an orthogonal problem [regarding strcutured 
-%  data] when we deal with biological data.
+%  When it comes to the methodology it exists an orthogonal problem [regarding
+%  strcutured data] when we deal with biological data.
  If we look at the case of deep learning for CV, where we deal with images, a key
  element of any architecture for it's success was the use of convolutional layers---one
  will mostly observe convolutional neural networks (CNNs) when analizying the state of
@@ -219,10 +125,10 @@ When we deal with this biological and molecular data, it exists a challenge on h
 
 Another of the big challenges is to unify all the aspects of drug-discovery and be able
  to incorporate all the rellevant biological information when designing possible
- candidate molecules. An initial success story on that line is the recently paper
- published by Zhavoronkov et al. \cite{Zhavoronkov2019} where the authors describe a
- deep learning method by which they are able to discover inhibitors of discoidin domain
- receptor 1 (DDR1)—a kinase implicated in fibrosis—in just 21 days.
+ candidate molecules. An initial success story on that line is a recently paper
+ \cite{Zhavoronkov2019} where the authors describe a deep learning method by which they
+ are able to discover inhibitors of discoidin domain receptor 1 (DDR1)—a kinase
+ implicated in fibrosis—in just 21 days.
 
 Those promising results, albeit encouraging, are just the tip of the iceberg. There is
 still a long way till a model can satisfactorily capture the biological complexity of
@@ -251,11 +157,11 @@ protein-protein interaction (PPI) network.
 
 ------
 
-\section*{Aim \& Methods}
+    \section*{Aim \& Methods}
 [Should I separate em in two different sections?]
 
 The aim of this thesis will be two fold. One the one side, analyze how the explicit use
-of graph convolutional neural networks (CGNNs) may open new oportunities when dealing
+of graph convolutional neural networks (GCNNs) may open new oportunities when dealing
 with biological and checmical data. On the other side, explore how modelling the biology
 at different levels (e.g. molecular structure v.s. molecular interacton network [okay
 here I need to develop furhter about PPI, maybe mention NetBite (as Jannis referenced in
@@ -263,16 +169,20 @@ the mail)]) may help with our understanding [of the biology? of compounds intera
 and help generate better models. Furthermore, evaluate how these may be integrated
 toguether.
 
-GCNNs: 
-
-Multi-level:
-
 This precise work will be focused around exploring all these concepts in the context of
 drug design for cancer [...] the work will be done in colaboration with the
 Computational Systems Biology group at IBM Research (Zurich). [...] The group is
-currently focused on individualised paediatric cure (iPC), so an end gola of this
-project if for the end results of this project to help in that effor, for instance in
-contibuting to the ongoing research in neuroblastoma.
+currently focused on individualised paediatric cure (iPC), so an end goal of this
+project is for the end results of it to help in that effor, for instance in contibuting
+to the ongoing research in neuroblastoma.
+
+As mentioned previously, the idea of using GCNNs is not a new one in the literature
+\cite{Sun2019}. A particular direction to be follow would be to reframe vairational
+autoencoders to operate over graphs \cite{Simonovsky2018,Li2018}, element that could be
+introduced into the wider framework for drug desing I will be building upon
+\cite{Born2019}. That could be expanded with ideas 
+
+Multi-level:
 
 % Among the pleathora of techniques to be explored in order to improve models we will be
 %  focusing on how information from graph structures can be extracted and used for these
@@ -282,12 +192,12 @@ contibuting to the ongoing research in neuroblastoma.
 %  a particular protein. Some papers [paper jannis mentioned in the email] have already
 %  indicated that that may be the casee...\dots
 
-% Another case to look at would be to model the proteins itself in a  way that represents
-%  them in a more complete way?[more natural way], explicitly accounting for their
-%  structure and how different parts of it may interact. A successful example of that: Deep
-%  learning enables rapid identification of potent DDR1 kinase inhibitors has recently been
-%  published in the literature and opens the door for further improvements on the
-%  biological modelling....
+% Another case to look at would be to model the proteins itself in a  way that
+%  represents them in a more complete way?[more natural way], explicitly accounting for
+%  their structure and how different parts of it may interact. A successful example of
+%  that: Deep learning enables rapid identification of potent DDR1 kinase inhibitors has
+%  recently been published in the literature and opens the door for further improvements
+%  on the biological modelling....
 
 
 

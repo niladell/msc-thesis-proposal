@@ -1,15 +1,3 @@
-@article{Born2019,
-abstract = {With the advent of deep generative models in computational chemistry, in silico anticancer drug design has undergone an unprecedented transformation. While state-of-the-art deep learning approaches have shown potential in generating compounds with desired chemical properties, they disregard the genetic profile and properties of the target disease. Here, we introduce the first generative model capable of tailoring anticancer compounds for a specific biomolecular profile. Using a RL framework, the transcriptomic profiles of cancer cells are used as a context for the generation of candidate molecules. Our molecule generator combines two separately pretrained variational autoencoders (VAEs) - the first VAE encodes transcriptomic profiles into a smooth, latent space which in turn is used to condition a second VAE to generate novel molecular structures on the given transcriptomic profile. The generative process is optimized through PaccMann, a previously developed drug sensitivity prediction model to obtain effective anticancer compounds for the given context (i.e., transcriptomic profile). We demonstrate how the molecule generation can be biased towards compounds with high predicted inhibitory effect against individual cell lines or specific cancer sites. We verify our approach by investigating candidate drugs generated against specific cancer types and find the highest structural similarity to existing compounds with known efficacy against these cancer types. We envision our approach to transform in silico anticancer drug design by leveraging the biomolecular characteristics of the disease in order to increase success rates in lead compound discovery.},
-archivePrefix = {arXiv},
-arxivId = {1909.05114},
-author = {Born, Jannis and Manica, Matteo and Oskooei, Ali and Cadow, Joris and Mart{\'{i}}nez, Mar{\'{i}}a Rodr{\'{i}}guez},
-eprint = {1909.05114},
-file = {:home/nil/.local/share/data/Mendeley Ltd./Mendeley Desktop/Downloaded/Born et al. - 2019 - PaccMannRL Designing anticancer drugs from transcriptomic data via reinforcement learning.pdf:pdf},
-month = {aug},
-title = {{PaccMann{\^{}}RL: Designing anticancer drugs from transcriptomic data via reinforcement learning}},
-url = {http://arxiv.org/abs/1909.05114},
-year = {2019}
-}
 @article{Gawehn2016,
 author = {Gawehn, Erik and Hiss, Jan A. and Schneider, Gisbert},
 doi = {10.1002/minf.201501008},
@@ -22,6 +10,58 @@ title = {{Deep Learning in Drug Discovery}},
 url = {http://doi.wiley.com/10.1002/minf.201501008},
 volume = {35},
 year = {2016}
+}
+@article{Born2019,
+abstract = {With the advent of deep generative models in computational chemistry, in silico anticancer drug design has undergone an unprecedented transformation. While state-of-the-art deep learning approaches have shown potential in generating compounds with desired chemical properties, they disregard the genetic profile and properties of the target disease. Here, we introduce the first generative model capable of tailoring anticancer compounds for a specific biomolecular profile. Using a RL framework, the transcriptomic profiles of cancer cells are used as a context for the generation of candidate molecules. Our molecule generator combines two separately pretrained variational autoencoders (VAEs) - the first VAE encodes transcriptomic profiles into a smooth, latent space which in turn is used to condition a second VAE to generate novel molecular structures on the given transcriptomic profile. The generative process is optimized through PaccMann, a previously developed drug sensitivity prediction model to obtain effective anticancer compounds for the given context (i.e., transcriptomic profile). We demonstrate how the molecule generation can be biased towards compounds with high predicted inhibitory effect against individual cell lines or specific cancer sites. We verify our approach by investigating candidate drugs generated against specific cancer types and find the highest structural similarity to existing compounds with known efficacy against these cancer types. We envision our approach to transform in silico anticancer drug design by leveraging the biomolecular characteristics of the disease in order to increase success rates in lead compound discovery.},
+archivePrefix = {arXiv},
+arxivId = {1909.05114},
+author = {Born, Jannis and Manica, Matteo and Oskooei, Ali and Cadow, Joris and Mart{\'{i}}nez, Mar{\'{i}}a Rodr{\'{i}}guez},
+eprint = {1909.05114},
+file = {:home/nil/.local/share/data/Mendeley Ltd./Mendeley Desktop/Downloaded/Born et al. - 2019 - PaccMannRL Designing anticancer drugs from transcriptomic data via reinforcement learning.pdf:pdf},
+month = {aug},
+title = {{PaccMann{\^{}}RL: Designing anticancer drugs from transcriptomic data via reinforcement learning}},
+url = {http://arxiv.org/abs/1909.05114},
+year = {2019}
+}
+@inproceedings{Simonovsky2018,
+abstract = {Deep learning on graphs has become a popular research topic with many applications. However, past work has concentrated on learning graph embedding tasks, which is in contrast with advances in generative models for images and text. Is it possible to transfer this progress to the domain of graphs? We propose to sidestep hurdles associated with linearization of such discrete structures by having a decoder output a probabilistic fully-connected graph of a predefined maximum size directly at once. Our method is formulated as a variational autoencoder. We evaluate on the challenging task of molecule generation.},
+archivePrefix = {arXiv},
+arxivId = {1802.03480},
+author = {Simonovsky, Martin and Komodakis, Nikos},
+booktitle = {Lecture Notes in Computer Science (including subseries Lecture Notes in Artificial Intelligence and Lecture Notes in Bioinformatics)},
+doi = {10.1007/978-3-030-01418-6_41},
+eprint = {1802.03480},
+file = {:home/nil/.local/share/data/Mendeley Ltd./Mendeley Desktop/Downloaded/Simonovsky, Komodakis - Unknown - GraphVAE Towards Generation of Small Graphs Using Variational Autoencoders(2).pdf:pdf},
+isbn = {9783030014179},
+issn = {16113349},
+pages = {412--422},
+title = {{GraphVAE: Towards generation of small graphs using variational autoencoders}},
+volume = {11139 LNCS},
+year = {2018}
+}
+@article{Li2018,
+abstract = {Graphs are fundamental data structures which concisely capture the relational structure in many important real-world domains, such as knowledge graphs, physical and social interactions, language, and chemistry. Here we introduce a powerful new approach for learning generative models over graphs, which can capture both their structure and attributes. Our approach uses graph neural networks to express probabilistic dependencies among a graph's nodes and edges, and can, in principle, learn distributions over any arbitrary graph. In a series of experiments our results show that once trained, our models can generate good quality samples of both synthetic graphs as well as real molecular graphs, both unconditionally and conditioned on data. Compared to baselines that do not use graph-structured representations, our models often perform far better. We also explore key challenges of learning generative models of graphs, such as how to handle symmetries and ordering of elements during the graph generation process, and offer possible solutions. Our work is the first and most general approach for learning generative models over arbitrary graphs, and opens new directions for moving away from restrictions of vector- and sequence-like knowledge representations, toward more expressive and flexible relational data structures.},
+archivePrefix = {arXiv},
+arxivId = {1803.03324},
+author = {Li, Yujia and Vinyals, Oriol and Dyer, Chris and Pascanu, Razvan and Battaglia, Peter},
+eprint = {1803.03324},
+file = {:home/nil/.local/share/data/Mendeley Ltd./Mendeley Desktop/Downloaded/Li et al. - 2018 - Learning Deep Generative Models of Graphs(2).pdf:pdf},
+title = {{Learning Deep Generative Models of Graphs}},
+url = {http://arxiv.org/abs/1803.03324},
+year = {2018}
+}
+@misc{Chen2018,
+abstract = {Over the past decade, deep learning has achieved remarkable success in various artificial intelligence research areas. Evolved from the previous research on artificial neural networks, this technology has shown superior performance to other machine learning algorithms in areas such as image and voice recognition, natural language processing, among others. The first wave of applications of deep learning in pharmaceutical research has emerged in recent years, and its utility has gone beyond bioactivity predictions and has shown promise in addressing diverse problems in drug discovery. Examples will be discussed covering bioactivity prediction, de novo molecular design, synthesis prediction and biological image analysis.},
+author = {Chen, Hongming and Engkvist, Ola and Wang, Yinhai and Olivecrona, Marcus and Blaschke, Thomas},
+booktitle = {Drug Discovery Today},
+doi = {10.1016/j.drudis.2018.01.039},
+file = {:home/nil/Documents/Mendeley/Chen et al. - 2018 - The rise of deep learning in drug discovery.pdf:pdf},
+issn = {18785832},
+number = {6},
+pages = {1241--1250},
+title = {{The rise of deep learning in drug discovery}},
+volume = {23},
+year = {2018}
 }
 @article{Sun2019,
 abstract = {Despite the fact that deep learning has achieved remarkable success in various domains over the past decade, its application in molecular informatics and drug discovery is still limited. Recent advances in adapting deep architectures to structured data have opened a new paradigm for pharmaceutical research. In this survey, we provide a systematic review on the emerging field of graph convolutional networks and their applications in drug discovery and molecular informatics. Typically we are interested in why and how graph convolution networks can help in drug-related tasks. We elaborate the existing applications through four perspectives: molecular property and activity prediction, interaction prediction, synthesis prediction and de novo drug design. We brief ly introduce the theoretical foundations behind graph convolutional networks and illustrate various architectures based on different formulations. Then we summarize the representative applications in drug-related problems. We also discuss the current challenges and future possibilities of applying graph convolutional networks to drug discovery.},
@@ -51,14 +91,4 @@ title = {{Deep learning enables rapid identification of potent DDR1 kinase inhib
 url = {https://doi.org/10.1038/s41587-019-0224-x},
 volume = {37},
 year = {2019}
-}
-@misc{Chen2018,
-abstract = {Over the past decade, deep learning has achieved remarkable success in various artificial intelligence research areas. Evolved from the previous research on artificial neural networks, this technology has shown superior performance to other machine learning algorithms in areas such as image and voice recognition, natural language processing, among others. The first wave of applications of deep learning in pharmaceutical research has emerged in recent years, and its utility has gone beyond bioactivity predictions and has shown promise in addressing diverse problems in drug discovery. Examples will be discussed covering bioactivity prediction, de novo molecular design, synthesis prediction and biological image analysis.},
-author = {Chen, Hongming and Engkvist, Ola and Wang, Yinhai and Olivecrona, Marcus and Blaschke, Thomas},
-booktitle = {Drug Discovery Today},
-doi = {10.1016/j.drudis.2018.01.039},
-file = {:home/nil/Documents/Mendeley/Chen et al. - 2018 - The rise of deep learning in drug discovery.pdf:pdf},
-issn = {18785832},
-title = {{The rise of deep learning in drug discovery}},
-year = {2018}
 }
