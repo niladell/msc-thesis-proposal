@@ -101,12 +101,12 @@ It exists, then, a need for better mechanisms for detecting better candidates. O
 
 
 Among the different computational approaches that have been used in the process of drug
- discovery deep learning (DL) has shown signs to be a potential game changer. DL has
- been able to capitalize on the exponential growth of data and the higher availability
- of computational resources. For examle, DL has had a remarkable success on computer
- vision (CV) and natural language processing (NLP), and has become the go-to solution
- for any problem in these two fields. It is, at the same time, penetrating into other
- fields, drug-discovery being one of them \cite{Chen2018}. 
+ discovery deep learning (DL) has shown signs to be a potential game changer
+ \cite{Dargan2019}. DL has been able to capitalize on the exponential growth of data and
+ the higher availability of computational resources. For examle, DL has had a remarkable
+ success on computer vision (CV) and natural language processing (NLP), and has become
+ the go-to solution for any problem in these two fields. It is, at the same time,
+ penetrating into other fields, drug-discovery being one of them \cite{Chen2018}. 
 
 When we deal with this biological and molecular data, it exists a challenge on how to
  deal with the intrinsic structure of the data.
@@ -118,7 +118,7 @@ When we deal with this biological and molecular data, it exists a challenge on h
  the art in CV---which introduce a structural a prior based on the structure of the
  data. A similar case can be made for NLP. For that reason, there exists a strong signal
  to look for models that can leverage the structural equivalent when in molecule or
- protein data, i.e. leverage graph structures. Sign [Sign? need to rewrite that] of that
+ protein data, i.e. leverage graph structures \cite{Wu2019}. Sign [Sign? need to rewrite that] of that
  is the recent advancements in that direction \cite{Sun2019}.
  
 %  [There is already a literature on this and I'm gonna talk about it \cite{Sun2019}]
@@ -177,10 +177,21 @@ project is for the end results of it to help in that effor, for instance in cont
 to the ongoing research in neuroblastoma.
 
 As mentioned previously, the idea of using GCNNs is not a new one in the literature
-\cite{Sun2019}. A particular direction to be follow would be to reframe vairational
-autoencoders to operate over graphs \cite{Simonovsky2018,Li2018}, element that could be
-introduced into the wider framework for drug desing I will be building upon
-\cite{Born2019}. That could be expanded with ideas 
+\cite{Sun2019}. My project will build upon those ideas presented in the literature,
+expand them and test their feasibility by implementing them into a wider framework for
+drug design \cite{Born2019}. In that context two main areas of application appear. One
+of them would be to re-desing the drug conditional generator, for instance by reframing
+the vairational autoencoders, used for molecule generation, to architectures that
+operate over graphs \cite{Simonovsky2018,Li2018,Li2018a}. The second area would be to
+find better ways to asses the activity of these molecules, and in a wider context,
+assess their relevance as drug candidates. In the concrete case of the mentioned
+framework it is done by using a critic network proposed in \cite{Manica2019}. This could
+be expanded on a set of different fronts: usign structural data instead of SMILES
+\cite{Li,Do2019}, by using GCNNs to cover a much wider network of genes
+\cite{Oskooei2019, Wang2019}, or by introducing particular scores (rewards) based in the
+interaction of the compound to certain targets \cite{YingkaiGao2018, Zhavoronkov2019} or
+the combination of the compund with other drugs \cite{Zitnik2018} ---a common practice
+in patients with cancer.
 
 Multi-level:
 
