@@ -28,49 +28,7 @@
 
 \maketitle
 
-    \section*{Introduction/Background}
-    % The introduction of Convolutional Neural Networks (CNNs) represented a change in
-    % paradigm with respect to how well were neural networks able to deal with image
-    % inputs. And with relatively few years from their introduction we have gone a long
-    % way. In fact, they have been successfully implemented—and used to solve
-    % problems—in fields such as NLP, Genomics, (and others I guess). Recently Graph
-    % Convolutional Neural Networks (GCNNs) where proposed as analogous, in graphs, to
-    % what CNNs are in images. The idea is to be able to process input graph data by
-    % analyzing first the local structure around the nodes and then expand up based on
-    % this aggregate information. In the same way CNNs first observe small patches to
-    % then grow their effective [  ] to the whole image. In fact, a CNN can be viewed as
-    % a GCNN over a lattice (2D one if we are talking about grayscale images a 3D one if
-    % we add color, 4D if we use temporal convolutions…), as such GCNNs try to deal with
-    % arbitrarily structured graphs.
-    
-    % The introduction of this approach then, has opened the door to rethinking many
-    % problems. One of such is protein interaction. In fact, the perspective of being
-    % able to model proteins and molecules as graphs and natively process such graphs
-    % opens the door to better algorithms. So far, the approach has been similar those
-    % used in NLP, where what is analyzed is the aminoacid sequence as a string or a
-    % molecule or drug as a SMILE sequence (for example). So there’s an interest on how
-    % adding structural information may improve machine learning applied to biological
-    % problems. Furthermore, it is not know if the introduction of GCNNs would per-se
-    % allow the learning of better representations of this biological data, even if the
-    % original input is still an aminoacid or SMILE sequence.
-    
-    % Based on the previous ideas stated above I want to propose a project with the aim
-    % of better understanding GCNNs and how they can be applied to biological processes.
-    % In particular, I want to evaluate how GCNNs can learn peptide-protein interactions
-    % and be used to predict binding affinity and membrane cell presentation. My target
-    % pathway is the immune machinery in charge of presenting epitopes in the membrane
-    % via the MHC-I proteins. 
-    
-    % I plan to develop the project in colaboration MyNeo, a company dedicated to
-    % immunotherapy treatments for cancer. They have a completely individualized
-    % approach to developing neo-epitope candidates for each of the patients. That
-    % approach requires the individual analysis of the genomic and phenotipic variation
-    % of the tumour of the patient, as well as, accounting for the particular
-    % interaction with the HLA of the patient. I believe that such an approach is teh
-    % perfrect training ground to where to analyze how a novel approach can help predict
-    % and understand how all these things come toguether
-    
-
+    \section*{Introduction/Background}  
 
 Drug discovery—the process by which a potential new medicine is identified---is a
  complex process that encompases the intersection of several fields (such as biology,
@@ -155,8 +113,6 @@ interactions---commonly known as the docking problem---while at the same time us
 information to predict effects of the introduction of the compound on the larger
 protein-protein interaction (PPI) network.
 
-------
-
     \section*{Aim \& Methods}
 [Should I separate em in two different sections?]
 
@@ -193,7 +149,11 @@ interaction of the compound to certain targets \cite{YingkaiGao2018, Zhavoronkov
 the combination of the compund with other drugs \cite{Zitnik2018} ---a common practice
 in patients with cancer.
 
-Multi-level:
+All these possible changes on the critic model would apply at different abstraction
+levels. That opens the door to seek for ways to integrate the representations learnt at
+those different stages \cite{Ying2018, Ma2019, Huang2019}. On top of that information
+extracted from here could be then leveraged on the drug generation part of the
+framework.
 
 % Among the pleathora of techniques to be explored in order to improve models we will be
 %  focusing on how information from graph structures can be extracted and used for these
