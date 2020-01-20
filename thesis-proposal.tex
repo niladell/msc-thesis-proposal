@@ -34,17 +34,20 @@ Drug discovery—the process by which a potential new medicine is identified---i
  complex process that encompases the intersection of several fields (such as biology,
  statistics, chemistry or pharmacology). The entire process is a long and costly
  endeavour, with a typical time-frame of 10 to 20 years till maket release and an
- estimated cost between 1 and 2 billion USD. With just a small quantity of the initially
- identified compounds actually becoming an approved medicine. Many of these dropouts
- happening at the early stages of the entire pipeline.
+ estimated cost between 2 and 3 billion USD \cite{Schneider2019, Scannell2012}. With
+ just a small quantity of the initially identified compounds actually becoming an
+ approved medicine. Many of these dropouts happening at the early stages of the entire
+ pipeline.
 
 It exists, then, a need for better mechanisms for detecting better candidates. One of
  the most promising directions is to improve the \emph{in-silico}
  methods---computational simulations are relatively cheap and quick run that makes them
  an interesting solution. \emph{In-silico} simulations then cover two main aspects:
- modelling the dynamics of the human body---such that any effect relevant to the durg or
- the disease will be captured by it---and methods to generate good candidates that are
- effective at exploring the vast space of possible compounds.
+ \textbf{predictive modelling}, meaning modelling the dynamics of the human body---such
+ that any effect relevant to the durg or the disease will be captured by it---and
+ \textbf{generative modelling}, namely methods to generate good candidates that are
+ effective at exploring the vast space of possible compounds, an estimated space
+ estimated of $10^{60}$ compounds\cite{Reymond2012}.
 
 
 % To do so, two main components are required: a model accurate enough of the human body,
@@ -76,10 +79,10 @@ When we deal with this biological and molecular data, it exists a challenge on h
  the art in CV---which introduce a structural a prior based on the structure of the
  data. A similar case can be made for NLP. For that reason, there exists a strong signal
  to look for models that can leverage the structural equivalent when in molecule or
- protein data, i.e. leverage graph structures \cite{Wu2019}. Sign [Sign? need to rewrite that] of that
- is the recent advancements in that direction \cite{Sun2019}.
- 
-%  [There is already a literature on this and I'm gonna talk about it \cite{Sun2019}]
+ protein data, i.e. leverage graph structures \cite{Wu2019}. In fact, there have been
+ several models as such being proposed in the literature \cite{Sun2019}.
+ %Sign of that is the recent advancements in that direction \cite{Sun2019}.
+ % [There is already a literature on this and I'm gonna talk about it \cite{Sun2019}]
 
 Another of the big challenges is to unify all the aspects of drug-discovery and be able
  to incorporate all the rellevant biological information when designing possible
@@ -155,68 +158,9 @@ those different stages \cite{Ying2018, Ma2019, Huang2019}. On top of that inform
 extracted from here could be then leveraged on the drug generation part of the
 framework.
 
-% Among the pleathora of techniques to be explored in order to improve models we will be
-%  focusing on how information from graph structures can be extracted and used for these
-%  pourposes. In partucular stuidying protein protein interaction (PPI) networks may
-%  unravel relationships in the cell that are being not currently taken into account when
-%  analyzing a perturbation in the system—for instance introducing a drug or knocking out
-%  a particular protein. Some papers [paper jannis mentioned in the email] have already
-%  indicated that that may be the casee...\dots
-
-% Another case to look at would be to model the proteins itself in a  way that
-%  represents them in a more complete way?[more natural way], explicitly accounting for
-%  their structure and how different parts of it may interact. A successful example of
-%  that: Deep learning enables rapid identification of potent DDR1 kinase inhibitors has
-%  recently been published in the literature and opens the door for further improvements
-%  on the biological modelling....
-
-
-
-
-% \section*{Methods}
-% \subsection*{Differential Privacy}
-% There have been several proposals in the literature on how to properly implement DP.
-% I will particularly focus on {\em Private Aggregation of Teacher Ensembles} (PATE)
-% \cite{pate} and it's generative variant, PATE-G. In PATE, the data is used to train
-% a set of teacher models, the aggregated output of which will be used as a method to
-% train a student model—our actual prediction model. So, we end up operating in a
-% framework where the data and the model are not directly connected. My task will be
-% to study the robustness and utility of this system outside toy setups. Specifically,
-% I will see how it can be used over genetic data and replicate literature results
-% where this methodology was not used—such that we can evaluate the performance of
-% this approach against the reported results in the literature. I plan to constrain
-% the literature to a particular topic. As a starting point, I will investigate the
-% integration of this framework to the topic of genomics and neurodevelopmental
-% disorders \cite{genomics-neuro}, more specifically, my focus is going to be on
-% genome-wide association methods \cite{genomics-autism, autism-dl, zhou2, ml-autism}.
-% Nevertheless, the final details of the subtopic may change depending on a set of
-% factors (i.e. replicability, dataset and model availability, computational power
-% requirements, etc.) to be evaluated during the development of the project.
-
-% {\color{grayishgray}[I don't really want to marry and promise too much on a topic as what is important is the methods that I apply to it, not the topics "per se". However as how I wrote it sounds super vague and "weak"... idk at the end of the day literature review is part of the project...]}
-
-% \subsection*{Federated Learning}
-% On the federated learning space, I will develop and evaluate a feasible prototype of a distributed system. I plan to build upon the results and solutions of the previous section. The initial approach will be to study and evaluate already proposed federated learning strategies \cite{fed-learning, fed-learning2} for generic types of data. Following that, I will develop on that base to generate a working framework for the specific models and data mentioned previously. 
-
-% This work will be first carried out in a simulated manner inside a virtual
-% environment, with the aim of physical implementation—although that will likely
-% fall outside the scope of this project due to time and resources constraints.
-% Ultimately this project should serve as a proof of concept for a solution
-% applicable in healthcare. 
-
-
-
-% {\color{red}\#\# NOTE: SHOULD I ADD THIS?} 
 % \subsection*{Practicalities}
-% The described work will be carried out at
-% \emph{Decentriq}\footnote{https://decentriq.ch/} under the supervision of Stefan
-% Deml. \emph{Decentriq} focuses its operations on combining machine learning and data
-% analytics with cryptography and privacy preserving techniques to allow
-% confidentiality when operating with private data.  Stefan is one of the co-founders
-% of \emph{Decentriq}, he is an ETH Zürich graduate, he has previously co-founded an
-% ETH Spin-off and worked for the Ethereum foundation.
 
-% All methods, software, and results will be open sourced.
+% Work at IBM?
 
 % \subsection*{Something else?}
 
@@ -229,8 +173,9 @@ framework.
 % Overall, you should aim to produce roughly a two-page document
 % (and certainly no more than four pages)
 % outlining your plan for the year.
+
+
 \bibliographystyle{apalike}
 \bibliography{thesis-proposal.bib}
     
-% \end{multicols}
 \end{document}    
