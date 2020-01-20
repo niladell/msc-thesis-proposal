@@ -45,9 +45,9 @@ It exists, then, a need for better mechanisms for detecting better candidates. O
  an interesting solution. \emph{In-silico} simulations then cover two main aspects:
  \textbf{predictive modelling}, meaning modelling the dynamics of the human body---such
  that any effect relevant to the durg or the disease will be captured by it---and
- \textbf{generative modelling}, i.e. methods to generate good candidates that are
- effective at exploring the vast space of possible compounds, estimated to be on the
- order of $10^{60}$\cite{Reymond2012}.
+ \textbf{generative modelling}, i.e. methods to generate good candidates which, in part,
+ means methods that are effective at exploring the vast space of possible compounds,
+ estimated to be on the order of $10^{60}$\cite{Reymond2012}.
 
 
 % To do so, two main components are required: a model accurate enough of the human body,
@@ -65,9 +65,10 @@ Among the different computational approaches that have been used in the process 
  discovery deep learning (DL) has shown signs to be a potential game changer
  \cite{Dargan2019}. DL has been able to capitalize on the exponential growth of data and
  the higher availability of computational resources. For examle, DL has had a remarkable
- success on computer vision (CV) and natural language processing (NLP), and has become
- the go-to solution for any problem in these two fields. It is, at the same time,
- penetrating into other fields, drug-discovery being one of them \cite{Chen2018}. 
+ success on computer vision (CV) \cite{CV} and natural language processing (NLP)
+ \cite{NLP}, and has become the go-to solution for any problem in these two fields. It
+ is, at the same time, penetrating into other fields, drug-discovery being one of them
+ \cite{Chen2018}. 
 
 When we deal with this biological and molecular data, it exists a challenge on how to
  deal with the intrinsic structure of the data.
@@ -77,10 +78,13 @@ When we deal with this biological and molecular data, it exists a challenge on h
  element of any architecture for it's success was the use of convolutional layers---one
  will mostly observe convolutional neural networks (CNNs) when analizying the state of
  the art in CV---which introduce a structural a prior based on the structure of the
- data. A similar case can be made for NLP. For that reason, there exists a strong signal
- to look for models that can leverage the structural equivalent when in molecule or
- protein data, i.e. leverage graph structures \cite{Wu2019}. In fact, there have been
- several models as such being proposed in the literature \cite{Sun2019}.
+ data\cite{CNNs}. A similar case can be made for NLP\cite{Somethings?}. For that reason,
+ there exists a strong signal to look for models that can leverage the structural
+ equivalent when in molecule or protein data, i.e. leverage graph structures. On that
+ direction there has been a rising field on the use of Graph Convolutional Neural
+ Networks (GCNNs)\cite{Wu2019}, and in fact, there have been several models as such
+ being proposed in the drug design literature \cite{Sun2019}. [NOTE: Rewrite this last
+ section]
  %Sign of that is the recent advancements in that direction \cite{Sun2019}.
  % [There is already a literature on this and I'm gonna talk about it \cite{Sun2019}]
 
@@ -88,7 +92,7 @@ Another of the big challenges is to unify all the aspects of drug-discovery and 
  to incorporate all the rellevant biological information when designing possible
  candidate molecules. An initial success story on that line is a recently paper
  \cite{Zhavoronkov2019} where the authors describe a deep learning method by which they
- are able to discover inhibitors of discoidin domain receptor 1 (DDR1)—a kinase
+ are able to discover, synthetise, and test in an animal model, inhibitors of discoidin domain receptor 1 (DDR1)—a kinase
  implicated in fibrosis—in just 21 days.
 
 Those promising results, albeit encouraging, are just the tip of the iceberg. There is
@@ -110,47 +114,46 @@ There is then a great need to develop models that can be conditioned based on a 
 set of biological [conditions?] and meaningfully account for this variations when
 generating a compound or/and evaluating a compunds effect when administered.
 
-In fact it is of interest to develop multi-scale models that capture system complexity
-at the different levels. For instance, a model that is able to learn protein-compound
-interactions---commonly known as the docking problem---while at the same time use this
-information to predict effects of the introduction of the compound on the larger
-protein-protein interaction (PPI) network.
+Last of all, in a more holistic view, it is of interest to develop multi-scale models
+that capture system complexity at the different levels. For instance, a model that is
+able to learn protein-compound interactions---commonly known as the docking
+problem---while at the same time use this information to predict effects of the
+introduction of the compound on the larger protein-protein interaction (PPI) network.
+[ref? \cite{Sun2019}]
 
     \section*{Aim \& Methods}
 [Should I separate em in two different sections?]
 
 The aim of this thesis will be two fold. One the one side, analyze how the explicit use
-of graph convolutional neural networks (GCNNs) may open new oportunities when dealing
-with biological and checmical data. On the other side, explore how modelling the biology
-at different levels (e.g. molecular structure v.s. molecular interacton network [okay
-here I need to develop furhter about PPI, maybe mention NetBite (as Jannis referenced in
-the mail)]) may help with our understanding [of the biology? of compounds interaction?]
-and help generate better models. Furthermore, evaluate how these may be integrated
-toguether.
+of GCNNs may open new oportunities when dealing with biological and checmical data. On
+the other side, explore how modelling the biology at different levels (e.g. molecular
+structure v.s. molecular interacton network) may help with our understanding [of the
+biology? of compounds interaction?] and create better models. Furthermore, evaluate how
+these different scales may be integrated toguether.
 
 This precise work will be focused around exploring all these concepts in the context of
-drug design for cancer [...] the work will be done in colaboration with the
-Computational Systems Biology group at IBM Research (Zurich). [...] The group is
-currently focused on individualised paediatric cure (iPC), so an end goal of this
-project is for the end results of it to help in that effor, for instance in contibuting
-to the ongoing research in neuroblastoma.
+designing anti-cancer drugs. The work will be done in colaboration with the
+Computational Systems Biology group at IBM Research (Zurich). The group is currently
+focused on individualised paediatric cure (iPC), so an end goal of this project is for
+the end results of it to help in that effort, for instance in contibuting to the ongoing
+research in neuroblastoma.
 
-As mentioned previously, the idea of using GCNNs is not a new one in the literature
-\cite{Sun2019}. My project will build upon those ideas presented in the literature,
-expand them and test their feasibility by implementing them into a wider framework for
-drug design \cite{Born2019}. In that context two main areas of application appear. One
-of them would be to re-desing the drug conditional generator, for instance by reframing
-the vairational autoencoders, used for molecule generation, to architectures that
-operate over graphs \cite{Simonovsky2018,Li2018,Li2018a}. The second area would be to
-find better ways to asses the activity of these molecules, and in a wider context,
-assess their relevance as drug candidates. In the concrete case of the mentioned
-framework it is done by using a critic network proposed in \cite{Manica2019}. This could
-be expanded on a set of different fronts: usign structural data instead of SMILES
-\cite{Li,Do2019}, by using GCNNs to cover a much wider network of genes
-\cite{Oskooei2019, Wang2019}, or by introducing particular scores (rewards) based in the
-interaction of the compound to certain targets \cite{YingkaiGao2018, Zhavoronkov2019} or
-the combination of the compund with other drugs \cite{Zitnik2018} ---a common practice
-in patients with cancer.
+As mentioned previously, the idea of using GCNNs for drug discovery is not a new one in
+the literature \cite{Sun2019}. My project will build upon those ideas presented in the
+literature, expand them and test their feasibility by implementing them into a wider
+framework for drug design \cite{Born2019}. In that context two main areas of application
+appear. One of them would be to re-desing the generative model, for instance by
+reframing the vairational autoencoders, used for molecule generation, to architectures
+that operate over graphs \cite{Simonovsky2018,Li2018,Li2018a}. The second area would be
+to find better ways to asses the activity of these molecules, and in a wider context,
+assess their relevance as drug candidates, i.e. improve the predictive model. In the
+concrete case of the mentioned framework it is done by using a critic network
+\cite{Manica2019}. This could be expanded on a set of different fronts: usign structural
+data instead of SMILES \cite{Li,Do2019}, by using GCNNs to cover a much wider network of
+genes \cite{Oskooei2019, Wang2019}, or by introducing particular scores (rewards) based
+in the interaction of the compound to certain targets \cite{YingkaiGao2018,
+Zhavoronkov2019} or the combination of the compund with other drugs
+\cite{Zitnik2018}---a common practice in patients with cancer.
 
 All these possible changes on the critic model would apply at different abstraction
 levels. That opens the door to seek for ways to integrate the representations learnt at
