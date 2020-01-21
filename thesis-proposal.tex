@@ -129,35 +129,33 @@ any arbitrary target and produce promising candidates. On top of that, there is 
 dimension, as such model should account for the variability from patient to patient and
 be able to generate a molecule that accomodates for all the genotipic and phenotipic
 variants, or generate different candidates for each of the genetic populations of
-interest. [need a ref here]
-
-[I am not completely sure about this paragraph but I leave it here so I don't forget for
-now] Even more, in the case of diseases like cancer, an heterogeneous population may
-appear within a single patient. So the same variant effects arise inside a dynamic
-ecosystem, where a drug that just targets a subpopulation may lead to an evolutionary
-pressure complicating further the treatment outlook [reference paper of evolutionary
-perspective to cancer].
+interest. That is specially important for hypercomplex diseases; for example in cancer
+where a genotipically heterogeneous cancer population may appear within a single
+patient \cite{Boland2017}. So the same variant effects arise inside a dynamic ecosystem, where a drug that
+just targets a subpopulation may lead to an evolutionary pressure complicating further
+the treatment outlook \cite{Enriquez-Navas2015}.
 
 There is then a great need to develop models that can be conditioned based on a large
-set of biological [conditions?] and meaningfully account for this variations when
-generating a compound or/and evaluating a compunds effect when administered.
+set of biological factors and meaningfully account for this variations when generating a
+compound or/and evaluating a compunds effect when administered. What is, in other
+words, the need for the wider adoption of precision medicine in the field.
 
 Last of all, in a more holistic view, it is of interest to develop multi-scale models
 that capture system complexity at the different levels. For instance, a model that is
 able to learn protein-compound interactions---commonly known as the docking
 problem---while at the same time use this information to predict effects of the
-introduction of the compound on the larger protein-protein interaction (PPI) network.
-[ref? \cite{Sun2019}]
+introduction of the compound on the larger protein-protein interaction (PPI)
+network\cite{Sun2019}.
 
     \section*{Aim \& Methods}
-[Should I separate em in two different sections?]
 
 The aim of this thesis will be two fold. One the one side, analyze how the explicit use
 of GCNNs may open new oportunities when dealing with biological and checmical data. On
 the other side, explore how modelling the biology at different levels (e.g. molecular
-structure v.s. molecular interacton network) may help with our understanding [of the
-biology? of compounds interaction?] and create better models. Furthermore, evaluate how
-these different scales may be integrated toguether.
+structure v.s. molecular interacton network) may help 
+% with our understanding [of the biology? of compounds interaction?] and 
+create better models. Furthermore, evaluate how these different scales may be integrated
+toguether.
 
 This precise work will be focused around exploring all these concepts in the context of
 designing anti-cancer drugs. The work will be done in colaboration with the
