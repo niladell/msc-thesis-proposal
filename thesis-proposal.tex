@@ -16,6 +16,7 @@
 \usepackage{amsfonts}       % blackboard math symbols
 \usepackage{nicefrac}       % compact symbols for 1/2, etc.
 \usepackage{microtype}      % microtypography
+\usepackage{xcolor}
 \pagenumbering{gobble}
 
 \begin{document}
@@ -48,6 +49,10 @@ It exists, then, a need for better mechanisms for detecting better candidates. O
  \textbf{generative modelling}, i.e. methods to generate good candidates which, in part,
  means methods that are effective at exploring the vast space of possible compounds,
  estimated to be on the order of $10^{60}$\cite{Reymond2012}.
+ Several computational approaches have been used over years, from modelling molecular
+ dynamics simulations to data-driven statistical methods \cite{Hung2014, Kuhn2016}.
+ Recently deep learning (DL) has shown signs to be a potential game changer
+ \cite{Dargan2019}. 
 
 
 % To do so, two main components are required: a model accurate enough of the human body,
@@ -59,32 +64,55 @@ It exists, then, a need for better mechanisms for detecting better candidates. O
 % drug response or one may try to generate new compounds by exploring compounds
 % chemically similar to already in use drugs. At the same time, many different methods
 % may be used to tackle all these questions.
+ 
+DL has been able to capitalize on the exponential growth of data and the higher
+ availability of computational resources. For examle, DL has had a remarkable success on
+ computer vision (CV) \cite{Guo2016} and natural language processing (NLP)
+ \cite{Young2018}, and has become the go-to solution for any problem in these two
+ fields. In CV a major part of that success can be found on the 
+%  introduction of convolutional layers as a basic building block
+{\color{red} intrinsic structural bias (prior) introduced by the basic building blocks
+ of these models: the "convolutional layer". In short, images are a 2D structure, and
+ neighboring pixel information is highly relevant to build higher order representations
+ on what's in an area (e.g. detecting that there's an edge on a patch of the image) that
+ are translation invariant on the image space (the identification of an edge does not
+ depend on where it is located in the image); based on that local representation one can
+ build higher abstractions. Convolutional neural networks (CNNs) leverage all those
+ aspects \cite{Fukushima1980, LeCun1989, Ulyanov}.} A similar argument can be done when
+ applied to NPL. When we deal with biological and molecular data, it exists a challenge
+ and an oportunity on how to deal with this intrinsic structure, i.e. leveraging the
+ knowledge that they are graphs. In fact, efforts in generalizing the convolution
+ operator on non-euclidian structures has {\color{red}[given rise to the appearance of]}
+ graph convolutional neural networks (GCNNs)\cite{Wu2019}. GCNNs, at the same time,
+ started penetrating into the field of drug discovery \cite{Sun2019}.
+
+%  Its architecture is a great prior to capture an inductive bias of images that fully
+%  connected networks don’t : Images are a 2D structure, and pixels have neighbors, which
+%  are very related to them. Thus it is very useful to compare pixels in a small zone, but
+%  much less to compare two random pixels of an image.
+
+% CNN uses convolutions, which are local operations, which act on neighbor pixels. And
+% patterns on images are also local : if you want to detect a line on the image, you need
+% to see if there is a continuous pattern of pixels of the same color, bordered by a
+% different color.
+
+%  It is, at the same time, penetrating into other fields, drug-discovery being one of
+%  them \cite{Chen2018}. 
 
 
-Among the different computational approaches that have been used in the process of drug
- discovery deep learning (DL) has shown signs to be a potential game changer
- \cite{Dargan2019}. DL has been able to capitalize on the exponential growth of data and
- the higher availability of computational resources. For examle, DL has had a remarkable
- success on computer vision (CV) \cite{CV} and natural language processing (NLP)
- \cite{NLP}, and has become the go-to solution for any problem in these two fields. It
- is, at the same time, penetrating into other fields, drug-discovery being one of them
- \cite{Chen2018}. 
-
-When we deal with this biological and molecular data, it exists a challenge on how to
- deal with the intrinsic structure of the data.
 %  When it comes to the methodology it exists an orthogonal problem [regarding
 %  strcutured data] when we deal with biological data.
- If we look at the case of deep learning for CV, where we deal with images, a key
- element of any architecture for it's success was the use of convolutional layers---one
- will mostly observe convolutional neural networks (CNNs) when analizying the state of
- the art in CV---which introduce a structural a prior based on the structure of the
- data\cite{CNNs}. A similar case can be made for NLP\cite{Somethings?}. For that reason,
- there exists a strong signal to look for models that can leverage the structural
- equivalent when in molecule or protein data, i.e. leverage graph structures. On that
- direction there has been a rising field on the use of Graph Convolutional Neural
- Networks (GCNNs)\cite{Wu2019}, and in fact, there have been several models as such
- being proposed in the drug design literature \cite{Sun2019}. [NOTE: Rewrite this last
- section]
+
+ { \color{gray} If we look at the case of deep learning for CV, where we deal with
+ images, a key element of any architecture for it's success was the use of convolutional
+ layers---one will mostly observe convolutional neural networks (CNNs) when analizying
+ the state of the art in CV---which introduce a structural a prior based on the
+ structure of the data\cite{Guo2016}. A similar case can be made for
+ NLP\cite{Young2018}. On that direction there has been a rising field on the use of
+ Graph Convolutional Neural Networks (GCNNs)\cite{Wu2019}, and in fact, there have been
+ several models as such being proposed in the drug design literature \cite{Sun2019}.
+ [NOTE: Rewrite this last section]}
+
  %Sign of that is the recent advancements in that direction \cite{Sun2019}.
  % [There is already a literature on this and I'm gonna talk about it \cite{Sun2019}]
 
