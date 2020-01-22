@@ -21,7 +21,7 @@
 
 \begin{document}
 
-\title{\Large Thesis proposal \\ \small An alpha version of the draft}
+\title{\Large Thesis proposal}
 \author{Nil Adell Mill \\
         Winter 2020 \\
         Institute of Neuroinformatics \\}
@@ -66,25 +66,20 @@ It exists, then, a need for better mechanisms for detecting better candidates. O
 % may be used to tackle all these questions.
  
 DL has been able to capitalize on the exponential growth of data and the higher
- availability of computational resources. For examle, DL has had a remarkable success on
- computer vision (CV) \cite{Guo2016} and natural language processing (NLP)
- \cite{Young2018}, and has become the go-to solution for any problem in these two
- fields. In CV a major part of that success can be found on the 
-%  introduction of convolutional layers as a basic building block
-{\color{red} intrinsic structural bias (prior) introduced by the basic building blocks
- of these models: the "convolutional layer". In short, images are a 2D structure, and
- neighboring pixel information is highly relevant to build higher order representations
- on what's in an area (e.g. detecting that there's an edge on a patch of the image) that
- are translation invariant on the image space (the identification of an edge does not
- depend on where it is located in the image); based on that local representation one can
- build higher abstractions. Convolutional neural networks (CNNs) leverage all those
- aspects \cite{Fukushima1980, LeCun1989, Ulyanov}.} A similar argument can be done when
- applied to NPL. When we deal with biological and molecular data, it exists a challenge
- and an oportunity on how to deal with this intrinsic structure, i.e. leveraging the
- knowledge that they are graphs. In fact, efforts in generalizing the convolution
- operator on non-euclidian structures has {\color{red}[given rise to the appearance of]}
- graph convolutional neural networks (GCNNs)\cite{Wu2019}. GCNNs, at the same time,
- started penetrating into the field of drug discovery \cite{Sun2019}.
+ availability of computational resources. DL has had a remarkable success on computer
+ vision (CV) \cite{Guo2016} and natural language processing (NLP) \cite{Young2018}, and
+ has become the go-to solution for any problem in these two fields. For instance in the
+ case of CV, where we deal with images, a key element of any architecture's success was
+ the use of convolutional layers---one will mostly observe convolutional neural networks
+ (CNNs) when analizying the state of the art in CV---which introduce a structural a
+ prior based on the structure of the data\cite{Fukushima1980, LeCun1989, Ulyanov} A
+ similar case can be made for NLP. When we deal with biological and
+ molecular data, it exists a challenge and an oportunity on how to deal with this
+ intrinsic structure, i.e. leveraging the knowledge that they are graphs. In fact,
+ efforts in generalizing the convolution operator on non-euclidian structures has
+ {\color{red}[given rise to the appearance of]} graph convolutional neural networks
+ (GCNNs)\cite{Wu2019}. GCNNs, at the same time, started penetrating into the field of
+ drug discovery \cite{Sun2019}.
 
 %  Its architecture is a great prior to capture an inductive bias of images that fully
 %  connected networks don’t : Images are a 2D structure, and pixels have neighbors, which
@@ -103,15 +98,15 @@ DL has been able to capitalize on the exponential growth of data and the higher
 %  When it comes to the methodology it exists an orthogonal problem [regarding
 %  strcutured data] when we deal with biological data.
 
- { \color{gray} If we look at the case of deep learning for CV, where we deal with
- images, a key element of any architecture for it's success was the use of convolutional
- layers---one will mostly observe convolutional neural networks (CNNs) when analizying
- the state of the art in CV---which introduce a structural a prior based on the
- structure of the data\cite{Guo2016}. A similar case can be made for
- NLP\cite{Young2018}. On that direction there has been a rising field on the use of
- Graph Convolutional Neural Networks (GCNNs)\cite{Wu2019}, and in fact, there have been
- several models as such being proposed in the drug design literature \cite{Sun2019}.
- [NOTE: Rewrite this last section]}
+%  { \color{gray} If we look at the case of deep learning for CV, where we deal with
+%  images, a key element of any architecture for it's success was the use of convolutional
+%  layers---one will mostly observe convolutional neural networks (CNNs) when analizying
+%  the state of the art in CV---which introduce a structural a prior based on the
+%  structure of the data\cite{Guo2016}. A similar case can be made for
+%  NLP\cite{Young2018}. On that direction there has been a rising field on the use of
+%  Graph Convolutional Neural Networks (GCNNs)\cite{Wu2019}, and in fact, there have been
+%  several models as such being proposed in the drug design literature \cite{Sun2019}.
+%  [NOTE: Rewrite this last section]}
 
  %Sign of that is the recent advancements in that direction \cite{Sun2019}.
  % [There is already a literature on this and I'm gonna talk about it \cite{Sun2019}]
@@ -130,15 +125,15 @@ dimension, as such model should account for the variability from patient to pati
 be able to generate a molecule that accomodates for all the genotipic and phenotipic
 variants, or generate different candidates for each of the genetic populations of
 interest. That is specially important for hypercomplex diseases; for example in cancer
-where a genotipically heterogeneous cancer population may appear within a single
-patient \cite{Boland2017}. So the same variant effects arise inside a dynamic ecosystem, where a drug that
-just targets a subpopulation may lead to an evolutionary pressure complicating further
-the treatment outlook \cite{Enriquez-Navas2015}.
+where a genotipically heterogeneous cancer population may appear within a single patient
+\cite{Boland2017}. So the same variant effects arise inside a dynamic ecosystem, where a
+drug that just targets a subpopulation may lead to an evolutionary pressure complicating
+further the treatment outlook \cite{Enriquez-Navas2015}.
 
 There is then a great need to develop models that can be conditioned based on a large
 set of biological factors and meaningfully account for this variations when generating a
 compound or/and evaluating a compunds effect when administered. What is, in other
-words, the need for the wider adoption of precision medicine in the field.
+words, the need for the wider adoption of precision medicine.
 
 Last of all, in a more holistic view, it is of interest to develop multi-scale models
 that capture system complexity at the different levels. For instance, a model that is
@@ -159,33 +154,33 @@ toguether.
 
 This precise work will be focused around exploring all these concepts in the context of
 designing anti-cancer drugs. The work will be done in colaboration with the
-Computational Systems Biology group at IBM Research (Zurich). The group is currently
-focused on individualised paediatric cure (iPC), so an end goal of this project is for
-the end results of it to help in that effort, for instance in contibuting to the ongoing
+Computational Systems Biology group at IBM Research (Zurich), which is currently focused
+on individualised paediatric cure (iPC). As such, an end goal of this project is for the
+end results of it to help in that effort, for instance in contibuting to the ongoing
 research in neuroblastoma.
 
 As mentioned previously, the idea of using GCNNs for drug discovery is not a new one in
 the literature \cite{Sun2019}. My project will build upon those ideas presented in the
 literature, expand them and test their feasibility by implementing them into a wider
 framework for drug design \cite{Born2019}. In that context two main areas of application
-appear. One of them would be to re-desing the generative model, for instance by
-reframing the vairational autoencoders, used for molecule generation, to architectures
-that operate over graphs \cite{Simonovsky2018,Li2018,Li2018a}. The second area would be
-to find better ways to asses the activity of these molecules, and in a wider context,
-assess their relevance as drug candidates, i.e. improve the predictive model. In the
-concrete case of the mentioned framework it is done by using a critic network
-\cite{Manica2019}. This could be expanded on a set of different fronts: usign structural
-data instead of SMILES \cite{Li,Do2019}, by using GCNNs to cover a much wider network of
-genes \cite{Oskooei2019, Wang2019}, or by introducing particular scores (rewards) based
-in the interaction of the compound to certain targets \cite{YingkaiGao2018,
-Zhavoronkov2019} or the combination of the compund with other drugs
-\cite{Zitnik2018}---a common practice in patients with cancer.
-
-All these possible changes on the critic model would apply at different abstraction
+appear. One of them is to re-desing the generative model, for instance by reframing the
+vairational autoencoders, used for molecule generation, to architectures that operate
+over graphs \cite{Simonovsky2018,Li2018,Li2018a}. The second area is to find better ways
+to asses the activity of these molecules, and in a wider context, assess their relevance
+as drug candidates, i.e. improve the predictive model. In the concrete case of the
+mentioned framework it is done by using a critic network \cite{Manica2019}. This can be
+expanded on a set of different fronts: usign structural data instead of
+SMILES\footnote{http://opensmiles.org/} \cite{Li,Do2019}, by using GCNNs over PPI
+networks, like STRING\footnote{https://string-db.org/}, in a manner that allows for the
+use all the information available\cite{Oskooei2019, Wang2019}, or by introducing
+particular scores (rewards) based in the interaction of the compound to certain targets
+\cite{YingkaiGao2018, Zhavoronkov2019} or the combination of the compund with other
+drugs \cite{Zitnik2018}---a common practice in patients with cancer. All these possible changes on the critic model would apply at different abstraction
 levels. That opens the door to seek for ways to integrate the representations learnt at
 those different stages \cite{Ying2018, Ma2019, Huang2019}. On top of that information
 extracted from here could be then leveraged on the drug generation part of the
 framework.
+
 
 % \subsection*{Practicalities}
 
