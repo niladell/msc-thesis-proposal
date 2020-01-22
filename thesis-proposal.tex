@@ -31,28 +31,27 @@
 
     \section*{Introduction/Background}  
 
-Drug discovery—the process by which a potential new medicine is identified---is a
- complex process that encompases the intersection of several fields (such as biology,
+Drug discovery---the process by which a potential new medicine is identified---is a
+ complex process that encompasses the intersection of several fields (such as biology,
  statistics, chemistry or pharmacology). The entire process is a long and costly
- endeavour, with a typical time-frame of 10 to 20 years till maket release and an
+ endeavor, with a typical time-frame of 10 to 20 years till market release and an
  estimated cost between 2 and 3 billion USD \cite{Schneider2019, Scannell2012}. With
  just a small quantity of the initially identified compounds actually becoming an
- approved medicine—only 1 out of 10 000 synthesised molecules gets market approval one
+ approved medicine—only 1 out of 10 000 synthesized molecules gets market approval one
  day. Many of these dropouts happening at the early stages of the entire pipeline.
 
 It exists, then, a need for better mechanisms for detecting better candidates. One of
  the most promising directions is to improve the \emph{in-silico}
  methods---computational simulations are relatively cheap and quick run that makes them
  an interesting solution. \emph{In-silico} simulations then cover two main aspects:
- \textbf{predictive modelling}, meaning modelling the dynamics of the human body---such
- that any effect relevant to the durg or the disease will be captured by it---and
+ \textbf{predictive modelling}, meaning modeling the dynamics of the human body---such
+ that any effect relevant to the drug or the disease will be captured by it---and
  \textbf{generative modelling}, i.e. methods to generate good candidates which, in part,
  means methods that are effective at exploring the vast space of possible compounds,
- estimated to be on the order of $10^{60}$\cite{Reymond2012}.
- Several computational approaches have been used over years, from modelling molecular
- dynamics simulations to data-driven statistical methods \cite{Hung2014, Kuhn2016}.
- Recently deep learning (DL) has shown signs to be a potential game changer
- \cite{Dargan2019}. 
+ estimated to be on the order of $10^{60}$\cite{Reymond2012}. Several computational
+ approaches have been used over the years, from modeling molecular dynamics simulations
+ to data-driven statistical methods \cite{Hung2014, Kuhn2016}. Recently deep learning
+ (DL) has shown signs to be a potential game-changer \cite{Dargan2019}. 
 
 
 % To do so, two main components are required: a model accurate enough of the human body,
@@ -66,20 +65,19 @@ It exists, then, a need for better mechanisms for detecting better candidates. O
 % may be used to tackle all these questions.
  
 DL has been able to capitalize on the exponential growth of data and the higher
- availability of computational resources. DL has had a remarkable success on computer
+ availability of computational resources. DL has had remarkable success in computer
  vision (CV) \cite{Guo2016} and natural language processing (NLP) \cite{Young2018}, and
- has become the go-to solution for any problem in these two fields. For instance in the
+ has become the go-to solution for any problem in these two fields. For instance, in the
  case of CV, where we deal with images, a key element of any architecture's success was
  the use of convolutional layers---one will mostly observe convolutional neural networks
- (CNNs) when analizying the state of the art in CV---which introduce a structural a
- prior based on the structure of the data\cite{Fukushima1980, LeCun1989, Ulyanov} A
- similar case can be made for NLP. When we deal with biological and
- molecular data, it exists a challenge and an oportunity on how to deal with this
- intrinsic structure, i.e. leveraging the knowledge that they are graphs. In fact,
- efforts in generalizing the convolution operator on non-euclidian structures has
- {\color{red}[given rise to the appearance of]} graph convolutional neural networks
- (GCNNs)\cite{Wu2019}. GCNNs, at the same time, started penetrating into the field of
- drug discovery \cite{Sun2019}.
+ (CNNs) when analyzing the state of the art in CV---which introduces a structural a
+ prior based on the structure of the data\cite{Fukushima1980, LeCun1989, Ulyanov}. A
+ similar case can be made for NLP. When we deal with biological and molecular data, it
+ exists a challenge and an opportunity on how to deal with this intrinsic structure,
+ i.e. leveraging the knowledge that they are graphs. Efforts in generalizing the
+ convolution operator on non-euclidian structures have {\color{red}[given rise to the
+ appearance of]} graph convolutional neural networks (GCNNs)\cite{Wu2019}. GCNNs, at the
+ same time, started penetrating the field of drug discovery \cite{Sun2019}.
 
 %  Its architecture is a great prior to capture an inductive bias of images that fully
 %  connected networks don’t : Images are a 2D structure, and pixels have neighbors, which
@@ -112,70 +110,68 @@ DL has been able to capitalize on the exponential growth of data and the higher
  % [There is already a literature on this and I'm gonna talk about it \cite{Sun2019}]
 
 Another of the big challenges is to unify all the aspects of drug-discovery and be able
- to incorporate all the rellevant biological information when designing possible
- candidate molecules. An initial success story on that line is a recently paper
+ to incorporate all the relevant biological information when designing possible
+ candidate molecules. An initial success story on that line is a recent paper
  \cite{Zhavoronkov2019} where the authors describe a deep learning method by which they
- are able to discover, synthetise, and test in an animal model, inhibitors of discoidin
+ are able to discover, synthesize, and test in an animal model, inhibitors of discoidin
  domain receptor 1 (DDR1)—a kinase implicated in fibrosis—in less than two months.
 
 Those promising results, albeit encouraging, are just the tip of the iceberg. There is
-still a long way till a model can satisfactorily capture the biological complexity of
-any arbitrary target and produce promising candidates. On top of that, there is an added
+still a long way until a model can satisfactorily capture the biological complexity of
+an arbitrary target and produce promising candidates. On top of that, there is an added
 dimension, as such model should account for the variability from patient to patient and
-be able to generate a molecule that accomodates for all the genotipic and phenotipic
-variants, or generate different candidates for each of the genetic populations of
-interest. That is specially important for hypercomplex diseases; for example in cancer
-where a genotipically heterogeneous cancer population may appear within a single patient
-\cite{Boland2017}. So the same variant effects arise inside a dynamic ecosystem, where a
-drug that just targets a subpopulation may lead to an evolutionary pressure complicating
-further the treatment outlook \cite{Enriquez-Navas2015}.
+be able to generate a molecule that accommodates for all the genotypic and phenotypic
+variants or generate different candidates for each of the genetic populations of
+interest. That is especially important for hypercomplex diseases; for example in cancer
+where a genotypically heterogeneous cancer population may appear within a single
+patient \cite{Boland2017}. So the same variant effects arise inside a dynamic
+ecosystem, where a drug that just targets a subpopulation may lead to an evolutionary
+pressure complicating further the treatment outlook \cite{Enriquez-Navas2015}.
 
 There is then a great need to develop models that can be conditioned based on a large
-set of biological factors and meaningfully account for this variations when generating a
-compound or/and evaluating a compunds effect when administered. What is, in other
+set of biological factors and meaningfully account for these variations when generating
+a compound or/and evaluating a compound's effect when administered. What is, in other
 words, the need for the wider adoption of precision medicine.
 
 Last of all, in a more holistic view, it is of interest to develop multi-scale models
-that capture system complexity at the different levels. For instance, a model that is
-able to learn protein-compound interactions---commonly known as the docking
-problem---while at the same time use this information to predict effects of the
-introduction of the compound on the larger protein-protein interaction (PPI)
-network\cite{Sun2019}.
+that capture system complexity at different levels. For instance, a model that can learn
+protein-compound interactions---commonly known as the docking problem---while at the
+same time use this information to predict effects of the introduction of the compound on
+the larger protein-protein interaction (PPI) network\cite{Sun2019}.
 
     \section*{Aim \& Methods}
 
-The aim of this thesis will be two fold. One the one side, analyze how the explicit use
-of GCNNs may open new oportunities when dealing with biological and checmical data. On
-the other side, explore how modelling the biology at different levels (e.g. molecular
-structure v.s. molecular interacton network) may help 
-% with our understanding [of the biology? of compounds interaction?] and 
-create better models. Furthermore, evaluate how these different scales may be integrated
-toguether.
+The aim of this thesis will be two-fold. One the one side, analyze how the explicit
+use of GCNNs may open new opportunities when dealing with biological and chemical
+data. On the other side, explore how modeling the biology at different levels (e.g.
+molecular structure v.s. molecular interaction network) may help create better
+models. Furthermore, evaluate how these different scales may be integrated.
 
-This precise work will be focused around exploring all these concepts in the context of
-designing anti-cancer drugs. The work will be done in colaboration with the
+This precise work will be focused on exploring all these concepts in the context of
+designing anti-cancer drugs. The work will be done in collaboration with the
 Computational Systems Biology group at IBM Research (Zurich), which is currently focused
-on individualised paediatric cure (iPC). As such, an end goal of this project is for the
-end results of it to help in that effort, for instance in contibuting to the ongoing
+on individualized pediatric cure (iPC). As such, an end goal of this project is for the
+end results of it to help in that effort, for instance in contributing to the ongoing
 research in neuroblastoma.
 
 As mentioned previously, the idea of using GCNNs for drug discovery is not a new one in
 the literature \cite{Sun2019}. My project will build upon those ideas presented in the
 literature, expand them and test their feasibility by implementing them into a wider
-framework for drug design \cite{Born2019}. In that context two main areas of application
-appear. One of them is to re-desing the generative model, for instance by reframing the
-vairational autoencoders, used for molecule generation, to architectures that operate
-over graphs \cite{Simonovsky2018,Li2018,Li2018a}. The second area is to find better ways
-to asses the activity of these molecules, and in a wider context, assess their relevance
-as drug candidates, i.e. improve the predictive model. In the concrete case of the
-mentioned framework it is done by using a critic network \cite{Manica2019}. This can be
-expanded on a set of different fronts: usign structural data instead of
-SMILES\footnote{http://opensmiles.org/} \cite{Li,Do2019}, by using GCNNs over PPI
-networks, like STRING\footnote{https://string-db.org/}, in a manner that allows for the
-use all the information available\cite{Oskooei2019, Wang2019}, or by introducing
-particular scores (rewards) based in the interaction of the compound to certain targets
-\cite{YingkaiGao2018, Zhavoronkov2019} or the combination of the compund with other
-drugs \cite{Zitnik2018}---a common practice in patients with cancer. All these possible changes on the critic model would apply at different abstraction
+framework for drug design \cite{Born2019}. In that context, two main areas of
+application appear. One of them is to re-design the generative model, for instance by
+reframing the variational autoencoders, used for molecule generation, to architectures
+that operate over graphs \cite{Simonovsky2018,Li2018, Li2018a}. The second area is to
+find better ways to asses the activity of these molecules, and in a wider context,
+assess their relevance as drug candidates, i.e. improve the predictive model. In the
+concrete case of the mentioned framework, it is done by using a critic network
+\cite{Manica2019}. This can be expanded on a set of different fronts: using structural
+data instead of SMILES\footnote{http://opensmiles.org/} \cite{Li, Do2019}, by using
+GCNNs over PPI networks, like STRING\footnote{https://string-db.org/}, in a manner that
+allows for the use all the information available\cite{Oskooei2019, Wang2019}, or by
+introducing particular scores (rewards) based in the interaction of the compound to
+certain targets \cite{YingkaiGao2018, Zhavoronkov2019} or the combination of the
+compound with other drugs \cite{Zitnik2018}---a common practice in patients with cancer.
+All these possible changes on the critic model would apply at different abstraction
 levels. That opens the door to seek for ways to integrate the representations learnt at
 those different stages \cite{Ying2018, Ma2019, Huang2019}. On top of that information
 extracted from here could be then leveraged on the drug generation part of the
