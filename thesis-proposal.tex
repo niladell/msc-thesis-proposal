@@ -192,27 +192,30 @@ the development of the models PyTorch \cite{Paszke2019} will be used as a main
 framework, likely used alongside DeepChem\footnote{https://deepchem.io/}.
 
 The novel predictive model will be evaluated against empirically measured properties of
-drugs in the mentioned data sources. Furthermore it will be evaluated how the model's
-performance compares to that of other methods in the literature. For instance, comparing
-IC50 prediction values for for cell-drug paris (unseen during training) to the
-empirically measured ones from the previously mentioned data sources as done in
-\cite{Oskooei2019, Joo2019, Oskooei2018}. Another prospective set of benchmarks to be
-used are those proposed by MoleculeNet \cite{Wu2018}.
+drugs in the mentioned data sources. Furthermore model's performance will be compared to
+that of other models in the literature. For instance, comparing IC50 prediction values
+for for cell-drug paris (unseen during training) to the empirically measured ones from
+the previously mentioned data sources as done in \cite{Oskooei2019, Joo2019,
+Oskooei2018}. Another prospective set of benchmarks to be used are those proposed by
+MoleculeNet \cite{Wu2018}.
 
 % To evaluate a generative model one should compute how well it estimates the density
 % distribution over the space of possible compounds. Unfortunately such thing is usually
 % impossible \cite{Theis2016} 
-For evaluation of generative models previous work \cite{Theis2016} has discussed
-different metrics and how they measure different conceptions of performance. On top of
-that in order to deal with different considerations, such as diversity, drug-likeness,
-or stability, metrics like the Fréchet ChemNet Distance (FCD) \cite{Preuer} have been
-proposed. As a less complex starting point point for the evaluation of the model, one
-can use the predictive model to asses the effectiveness of the generated compounds, and
-evaluate their similarity to existing compounds to already existing drugs, as done in
-\cite{Born2019}. On top of all these metrics, a natural final step for the entire
-evaluation of the system would be the actual in-vitro synthesis of the generated
-compounds, as done in \cite{Zhavoronkov2019}, however the complexity of that step makes
-it unlikely to be carried out during the execution of this project. 
+For evaluation of generative models previous work \cite{Theis2016} has discussed how
+different metrics measure different conceptions of performance. In order to deal with
+different considerations, such as diversity, novelty, molecular activity, or stability,
+metrics like the Fréchet ChemNet Distance (FCD) \cite{Preuer} have been proposed. In
+this project, one the metrics will come from the predictive model, which will be used
+method to evaluate the effectiveness of the generated compounds (i.e. the performance of
+the generative model). At the same time, another metric for the generative model will be
+the similarity of the generated compounds to already existing drugs. An approach that
+has already been used in the literature \cite{Born2019}. A wider benchmarking framework,
+GucaMol, was proposed recently \cite{Brown2019} and could be used in this project. On
+top of all these metrics, a natural final step for the entire evaluation of the system
+would be the actual in-vitro synthesis of the generated compounds, as done in
+\cite{Zhavoronkov2019}, however the complexity of that step makes it unlikely to be
+carried out during the execution of this project. 
 
 % \subsection*{Practicalities}
 
