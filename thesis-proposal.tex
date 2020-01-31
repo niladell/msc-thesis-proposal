@@ -38,8 +38,8 @@ Drug discovery---the process by which a potential new medicine is identified---i
  endeavor, with a typical time-frame of 10 to 20 years till market release and an
  estimated cost between 2 and 3 billion USD \cite{Schneider2019, Scannell2012}. With
  just a small quantity of the initially identified compounds actually becoming an
- approved medicine—only 1 out of 10 000 synthesized molecules gets market approval one
- day. Many of these dropouts happening at the early stages of the entire pipeline.
+ approved medicine—only 1 out of 10000 synthesized molecules gets market approval. Many
+ of these dropouts happening at the early stages of the entire pipeline.
 
 It exists, then, a need for better mechanisms for detecting better candidates. One of
  the most promising directions is to improve the \emph{in-silico}
@@ -73,10 +73,10 @@ DL has been able to capitalize on the exponential growth of data and the higher
  the use of convolutional layers---one will mostly observe convolutional neural networks
  (CNNs) when analyzing the state of the art in CV---which introduces a structural a
  prior based on the structure of the data\cite{Fukushima1980, LeCun1989, Ulyanov}. A
- similar case can be made for NLP. A similar approach can be proposed when we deal with
- biological and molecular data by leveraging the knowledge that they are graphs. Efforts
- in generalizing the convolution operator on non-euclidian structures have given rise to
- graph convolutional neural networks (GCNNs)\cite{Wu2019}. GCNNs, then, pose an
+ similar case can be made for NLP. A similar approach, them, can be proposed when we
+ deal with biological and molecular data by leveraging their graph representations.
+ Efforts in generalizing the convolution operator on non-euclidian structures have given
+ rise to graph convolutional neural networks (GCNNs)\cite{Wu2019}. GCNNs, then, pose an
  opportunity to drug discovery due to their capacity to deal natively with graph
  data\cite{Sun2019}.
 
@@ -124,10 +124,10 @@ still a long way until a model can satisfactorily capture the biological complex
 an arbitrary target and produce promising candidates. On top of that, there is an added
 dimension, as such model should account for the variability from patient to patient and
 be able to generate a molecule that accommodates for all the genotypic and phenotypic
-variants or generate different candidates for each of the genetic populations of
-interest. That is especially important for hypercomplex diseases; for example in cancer
-where a genotypically heterogeneous cancer population may appear within a single
-patient \cite{Boland2017}. So the same variant effects arise inside a dynamic
+variants. Or otherwise generate different candidates for each of the populations of
+interest. That is especially important for hypercomplex diseases; for example, in
+cancer, where a genotypically heterogeneous tumoral population may appear within a
+single patient \cite{Boland2017}. So the same variant effects arise inside a dynamic
 ecosystem, where a drug that just targets a subpopulation may lead to an evolutionary
 pressure complicating further the treatment outlook \cite{Enriquez-Navas2015}.
 
@@ -137,10 +137,10 @@ a compound or/and evaluating a compound's effect when administered. What is, in 
 words, the need for the wider adoption of precision medicine.
 
 Last of all, in a more holistic view, it is of interest to develop multi-scale models
-that capture system complexity at different levels. For instance, a model that can learn
-protein-compound interactions---commonly known as the docking problem---while at the
-same time use this information to predict effects of the introduction of the compound on
-the larger protein-protein interaction (PPI) network\cite{Sun2019}.
+that integrate a system's complexity at all different levels. For instance, a model that
+can learn protein-compound interactions---commonly known as the docking problem---while
+at the same time use this information to predict effects of the introduction of the
+compound on the larger protein-protein interaction (PPI) network\cite{Sun2019}.
 
     \section*{Aim \& Methods}
 
