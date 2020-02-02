@@ -40,19 +40,20 @@ Drug discovery---the process by which a potential new medicine is identified---i
  just a small quantity of the initially identified compounds actually becoming an
  approved medicine—only 1 out of 10000 synthesized molecules gets market approval. Many
  of these dropouts happening at the early stages of the entire pipeline.
+ {\color{red}Subsequently}, there is a need to for tools that enable us to identify
+ better drug candidates.
 
-It exists, then, a need for better mechanisms for detecting better candidates. One of
- the most promising directions is to improve the \emph{in-silico}
- methods---computational simulations are relatively cheap and quick run that makes them
- an interesting solution. \emph{In-silico} simulations then cover two main aspects:
- \textbf{predictive modelling}, meaning modeling the dynamics of the human body---such
- that any effect relevant to the drug or the disease will be captured by it---and
- \textbf{generative modelling}, i.e. methods to generate good candidates which, in part,
- means methods that are effective at exploring the vast space of possible compounds,
- estimated to be on the order of $10^{60}$\cite{Reymond2012}. Several computational
- approaches have been used over the years, from modeling molecular dynamics simulations
- to data-driven statistical methods \cite{Hung2014, Kuhn2016}. Recently deep learning
- (DL) has shown signs to be a potential game-changer \cite{Dargan2019}. 
+One of the most promising directions is to improve the \emph{in-silico} methods; which
+ are relatively cheap and quick, making them an interesting solution.
+ \emph{In-silico} simulations then cover two main aspects: \textbf{predictive
+ modelling}, meaning modeling the dynamics of the human body---such that any effect
+ relevant to the drug or the disease will be captured by it---and \textbf{generative
+ modelling}, i.e. methods to generate good candidates which, in part, means methods that
+ are effective at exploring the vast space of possible compounds, estimated to be on the
+ order of $10^{60}$\cite{Reymond2012}. Several computational approaches have been used
+ over the years, from modeling molecular dynamics simulations to data-driven statistical
+ methods \cite{Hung2014, Kuhn2016}. Recently deep learning (DL) has shown signs to be a
+ potential game-changer \cite{Dargan2019}. 
 
 
 % To do so, two main components are required: a model accurate enough of the human body,
@@ -112,9 +113,12 @@ DL has been able to capitalize on the exponential growth of data and the higher
  %Sign of that is the recent advancements in that direction \cite{Sun2019}.
  % [There is already a literature on this and I'm gonna talk about it \cite{Sun2019}]
 
-Another of the big challenges is to unify all the aspects of drug-discovery and be able
- to incorporate all the relevant biological information when designing possible
- candidate molecules. An initial success story on that line is a recent paper
+{\color{red} [NOTE: I feel like there's a narrative transition missing here (from the
+previous paragraph's argument to this)]}
+
+{\color{red}Another of the big challenges is to unify all the aspects of drug-discovery
+ and be able to incorporate all the relevant biological information when designing
+ possible candidate molecules.} An initial success story on that line is a recent paper
  \cite{Zhavoronkov2019} where the authors describe a deep learning method by which they
  are able to discover, synthesize, and test in an animal model, inhibitors of discoidin
  domain receptor 1 (DDR1)—a kinase implicated in fibrosis—in less than two months.
@@ -148,7 +152,7 @@ The aim of this thesis will be two-fold. One the one side, analyze how the expli
 use of GCNNs may open new opportunities when dealing with biological and chemical
 data. On the other side, explore how modeling the biology at different levels (e.g.
 molecular structure v.s. molecular interaction network) may help create better
-models. Furthermore, evaluate how these different scales may be integrated.
+models and, additionally, evaluate how these different scales may be integrated.
 
 This precise work will be focused on exploring all these concepts in the context of
 designing anti-cancer drugs. The work will be done in collaboration with the
@@ -170,12 +174,12 @@ find better ways to asses the activity of these molecules, and in a wider contex
 assess their relevance as drug candidates, i.e. improve the predictive model. In the
 concrete case of the mentioned framework, it is done by using a critic network
 \cite{Manica2019}. This can be expanded on a set of different fronts: using structural
-data instead of SMILES\footnote{http://opensmiles.org/} \cite{Li, Do2019}, by using
-GCNNs over PPI networks in a manner that allows for the use all the information
-available\cite{Oskooei2019, Wang2019}, or by introducing particular scores (rewards)
-based in the interaction of the compound to certain targets \cite{YingkaiGao2018,
-Zhavoronkov2019} or the combination of the compound with other drugs
-\cite{Zitnik2018}---a common practice in patients with cancer. All these possible
+data instead of SMILES\footnote{http://opensmiles.org/} \cite{Li, Do2019}, {\color{red}
+by using GCNNs over PPI networks in a manner that allows for a more effective way to
+extract the information in them} \cite{Oskooei2019, Wang2019}, or by introducing
+particular scores (rewards) based in the interaction of the compound to certain targets
+\cite{YingkaiGao2018, Zhavoronkov2019} or the combination of the compound with other
+drugs \cite{Zitnik2018}---a common practice in patients with cancer. All these possible
 changes on the critic model would apply at different abstraction levels. That opens the
 door to seek for ways to integrate the representations learnt at those different stages
 \cite{Ying2018, Ma2019, Huang2019}. On top of that information extracted from here could
@@ -194,7 +198,7 @@ framework, likely used alongside DeepChem\footnote{https://deepchem.io/}.
 The novel predictive model will be evaluated against empirically measured properties of
 drugs in the mentioned data sources. Furthermore model's performance will be compared to
 that of other models in the literature. For instance, comparing IC50 prediction values
-for for cell-drug paris (unseen during training) to the empirically measured ones from
+for cell-drug pairs (unseen during training) to the empirically measured ones from
 the previously mentioned data sources as done in \cite{Oskooei2019, Joo2019,
 Oskooei2018}. Another prospective set of benchmarks to be used are those proposed by
 MoleculeNet \cite{Wu2018}.
@@ -202,7 +206,7 @@ MoleculeNet \cite{Wu2018}.
 % To evaluate a generative model one should compute how well it estimates the density
 % distribution over the space of possible compounds. Unfortunately such thing is usually
 % impossible \cite{Theis2016} 
-For evaluation of generative models previous work \cite{Theis2016} has discussed how
+For the evaluation of generative models, previous work \cite{Theis2016} has discussed how
 different metrics measure different conceptions of performance. In order to deal with
 different considerations, such as diversity, novelty, molecular activity, or stability,
 metrics like the Fréchet ChemNet Distance (FCD) \cite{Preuer} have been proposed. In
