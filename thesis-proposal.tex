@@ -30,7 +30,7 @@
 
 \maketitle
 
-    \section*{Introduction \& Background}  
+    \section*{Introduction \& Background}
 
 Drug discovery---the process by which a potential new medicine is identified---is a
  complex process that encompasses the intersection of several fields (such as biology,
@@ -40,19 +40,19 @@ Drug discovery---the process by which a potential new medicine is identified---i
  just a small quantity of the initially identified compounds actually becoming an
  approved medicine—only 1 out of 10000 synthesized molecules gets market approval. Many
  of these dropouts happening at the early stages of the entire pipeline.
- {\color{red}Subsequently}, there is a need to for tools that enable us to identify
- better drug candidates.
+ {\color{red}Subsequently}, there is a need for tools that enable us to identify better
+ drug candidates.
 
 One of the most promising directions is to improve the \emph{in-silico} methods; which
- are relatively cheap and quick, making them an interesting solution.
- \emph{In-silico} simulations then cover two main aspects: \textbf{predictive
- modelling}, meaning modeling the dynamics of the human body---such that any effect
- relevant to the drug or the disease will be captured by it---and \textbf{generative
- modelling}, i.e. methods to generate good candidates which, in part, means methods that
- are effective at exploring the vast space of possible compounds, estimated to be on the
- order of $10^{60}$\cite{Reymond2012}. Several computational approaches have been used
- over the years, from modeling molecular dynamics simulations to data-driven statistical
- methods \cite{Hung2014, Kuhn2016}. Recently deep learning (DL) has shown signs to be a
+ are relatively cheap and quick, making them an interesting solution. \emph{In-silico}
+ simulations then cover two main aspects: \textbf{predictive modelling}, meaning
+ modeling the dynamics of the human body---such that any effect relevant to the drug or
+ the disease will be captured by it---and \textbf{generative modelling}, i.e. methods to
+ generate good candidates which, in part, means methods that are effective at exploring
+ the vast space of possible compounds, estimated to be on the order of
+ $10^{60}$\cite{Reymond2012}. Several computational approaches have been used over the
+ years, from modeling molecular dynamics simulations to data-driven statistical methods
+ \cite{Hung2014, Kuhn2016}. Recently deep learning (DL) has shown signs to be a
  potential game-changer \cite{Dargan2019}. 
  
 DL has been able to capitalize on the exponential growth of data and the higher
@@ -63,10 +63,10 @@ DL has been able to capitalize on the exponential growth of data and the higher
  the use of convolutional layers---one will mostly observe convolutional neural networks
  (CNNs) when analyzing the state of the art in CV---which introduces a structural a
  prior based on the structure of the data\cite{Fukushima1980, LeCun1989, Ulyanov}. A
- similar case can be made for NLP. A similar approach, them, can be proposed when we
- deal with biological and molecular data by leveraging their graph representations.
- Efforts in generalizing the convolution operator on non-euclidian structures have given
- rise to graph convolutional neural networks (GCNNs)\cite{Wu2019}. GCNNs, then, pose an
+ similar case can be made for NLP. A similar approach can be proposed when we deal with
+ biological and molecular data by leveraging their graph representations. Efforts in
+ generalizing the convolution operator on non-euclidian structures have given rise to
+ graph convolutional neural networks (GCNNs)\cite{Wu2019}. GCNNs, then, pose an
  opportunity to drug discovery due to their capacity to deal natively with graph
  data\cite{Sun2019}.
 
@@ -117,7 +117,7 @@ This precise work will be focused on exploring all these concepts in the context
  Computational Systems Biology group at IBM Research (Zurich), currently part of the iPC
  consortium\footnote{https://ipc-project.eu/}. As part of such, an end goal of this
  project is for the results of this project to help in the consortium efforts on
- paediatric cancer, for instance in contributing to the ongoing research in
+ pediatric cancer, for instance in contributing to the ongoing research in
  neuroblastoma, the most common cancer diagnosed on the first year of life
  \cite{Maris2010}.
 
@@ -138,7 +138,7 @@ As mentioned previously, the idea of using GCNNs for drug discovery is not a new
  particular scores (rewards) based in the interaction of the compound to certain targets
  \cite{YingkaiGao2018, Zhavoronkov2019} or the combination of the compound with other
  drugs \cite{Zitnik2018}---a common practice in patients with cancer. All these possible
- changes on the critic model would apply at different abstraction levels. That opens the
+ changes to the critic model would apply at different abstraction levels. That opens the
  door to seek for ways to integrate the representations learnt at those different stages
  \cite{Ying2018, Ma2019, Huang2019}. On top of that information extracted from here
  could be then leveraged on the drug generation part of the framework.
@@ -150,31 +150,35 @@ The data from this project will be obtained from multiple sources including, but
  limited to, the Genomics of Drug Sensitivity in Cancer (GDSC) databse \cite{Yang2013},
  STRING and STICH, \cite{Szklarczyk2019,Szklarczyk2016}, DrugBank \cite{Wishart2006},
  ChEMBL \cite{Gaulton2017}, PubChem \cite{Kim2019} and ZINC 15 \cite{Sterling2015}. For
- the development of the models PyTorch \cite{Paszke2019} will be used as a main
- framework, likely used alongside DeepChem\footnote{https://deepchem.io/}.
+ the development of the models PyTorch \cite{Paszke2019} will be used as the main
+ framework, most likely alongside DeepChem\footnote{https://deepchem.io/}.
 
 The novel predictive model will be evaluated against empirically measured properties of
- drugs in the mentioned data sources. Furthermore model's performance will be compared
- to that of other models in the literature. For instance, comparing IC50 prediction
- values for cell-drug pairs (unseen during training) to the empirically measured ones
- from the previously mentioned data sources as done in \cite{Oskooei2019, Joo2019,
- Oskooei2018}. Another prospective set of benchmarks to be used are those proposed by
- MoleculeNet \cite{Wu2018}.
+ drugs in the mentioned data sources. Furthermore, the model's performance will be
+ compared to that of other models in the literature. For instance, comparing IC50
+ prediction values for cell-drug pairs (unseen during training) to the empirically
+ measured ones from the previously mentioned data sources as done in \cite{Oskooei2019,
+ Joo2019, Oskooei2018}. Another prospective set of benchmarks to be used are those
+ proposed by MoleculeNet \cite{Wu2018}.
 
 For the evaluation of generative models, previous work \cite{Theis2016} has discussed
  how different metrics measure different conceptions of performance. In order to deal
  with different considerations, such as diversity, novelty, molecular activity, or
  stability, metrics like the Fréchet ChemNet Distance (FCD) \cite{Preuer} have been
- proposed. In this project, one the metrics will come from the predictive model, which
- will be used method to evaluate the effectiveness of the generated compounds (i.e. the
- performance of the generative model). At the same time, another metric for the
- generative model will be the similarity of the generated compounds to already existing
- drugs. An approach that has already been used in the literature \cite{Born2019}. A
- wider benchmarking framework, GucaMol, was proposed recently \cite{Brown2019} and could
- be used in this project. On top of all these metrics, a natural final step for the
- entire evaluation of the system would be the actual in-vitro synthesis of the generated
- compounds, as done in \cite{Zhavoronkov2019}, however the complexity of that step makes
- it unlikely to be carried out during the execution of this project. 
+ proposed. {\color{red}[NOTE: Kinda shitty transition, should I put the lines before
+ this note in [1!] ?]} In this project one of the metrics will come from the
+ predictive model, which will be used method to evaluate the effectiveness of the
+ generated compounds (i.e. the performance of the generative model). At the same time,
+ another metric for the generative model will be the similarity of the generated
+ compounds to already existing drugs. An approach that has already been used in the
+ literature \cite{Born2019}. {\color{red}[1!]} Moreover the consequences of FCD will be
+ explored. A wider benchmarking framework, GucaMol, was proposed recently
+ \cite{Brown2019}, {\color{red} and it incorporates elements like the FCD score; so it
+ will be explored as a benchmark for this project}. On top of all these metrics, a
+ natural final step for the entire evaluation of the system would be the actual in-vitro
+ synthesis of the generated compounds, as done in \cite{Zhavoronkov2019}, however, the
+ complexity of that step makes it unlikely to be carried out during the execution of
+ this project. 
 
 % \subsection*{Practicalities}
 
