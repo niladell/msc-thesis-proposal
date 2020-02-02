@@ -48,11 +48,11 @@ One of the most promising directions is to improve the \emph{in-silico} methods;
  modeling the dynamics of the human body---such that any effect relevant to the drug or
  the disease will be captured by it---and \textbf{generative modelling}, i.e. methods to
  generate good candidates which, in part, means methods that are effective at exploring
- the vast space of possible compounds, estimated to be on the order of
- $10^{60}$ \cite{Reymond2012}. Several computational approaches have been used over the
- years, from molecular dynamics simulations to data-driven statistical methods
- \cite{Hung2014, Kuhn2016}. Recently deep learning (DL) has shown signs to be a
- potential game-changer \cite{Dargan2019}. 
+ the vast space of possible compounds, estimated to be on the order of $10^{60}$
+ \cite{Reymond2012}. Several computational approaches have been used over the years,
+ from molecular dynamics simulations to data-driven statistical methods \cite{Hung2014,
+ Kuhn2016}. Among the possible approaches, deep learning (DL) has shown signs to be a
+ potential game-changer in drug-discovery \cite{Dargan2019}. 
  
 DL has been able to capitalize on the exponential growth of data and the higher
  availability of computational resources. DL has had remarkable success in computer
@@ -65,14 +65,15 @@ DL has been able to capitalize on the exponential growth of data and the higher
  similar approach can be proposed when we deal with biological and molecular data by
  leveraging their graph representations. Efforts in generalizing the convolution
  operator on non-euclidian structures have given rise to graph convolutional neural
- networks (GCNNs) \cite{Wu2019}. GCNNs, then, pose an opportunity to drug discovery due
- to their capacity to deal natively with graph data \cite{Sun2019}.
+ networks (GCNNs) \cite{Wu2019}. GCNNs, then, {\color{red} pose an opportunity to drug
+ discovery due} to their capacity to deal natively with graph data \cite{Sun2019}.
 
 {\color{red} [NOTE: I feel like there's a narrative transition missing here (from the
 previous paragraph's argument to this)]}
 
-{\color{red}Another of the big challenges for \emph{in-silico} methods is to unify all
- the aspects of drug-discovery and be able to incorporate all the relevant biological
+{\color{red}Regardless of the method used, there is a set of shared challenges for
+ \emph{in-silico} models. One of them is to unify the different aspects of
+ drug-discovery by incorporating all the relevant biological and chemical
  information when designing possible candidate molecules.} An initial success story on
  that line is a recent paper \cite{Zhavoronkov2019} where the authors describe a deep
  learning method by which they are able to discover, synthesize, and test in an animal
