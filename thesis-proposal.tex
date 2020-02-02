@@ -39,7 +39,73 @@ Drug discovery---the process by which a potential new medicine is identified---i
  estimated cost between 2 and 3 billion USD \cite{Schneider2019, Scannell2012}. With
  just a small quantity of the initially identified compounds actually becoming an
  approved medicine—only 1 out of 10000 synthesized molecules gets market approval. Many
- of these dropouts happening at the early stages of the entire pipeline.
+ of these dropouts happening at the early stages of the entire pipeline. On that
+ context, a big challenge is to unify all the aspects of drug-discovery and be able to
+ incorporate all the relevant biological information when designing possible candidate
+ molecules.
+
+
+%  at the same time, started penetrating the field of drug discovery \cite{Sun2019}.
+
+%  Its architecture is a great prior to capture an inductive bias of images that fully
+%  connected networks don’t : Images are a 2D structure, and pixels have neighbors, which
+%  are very related to them. Thus it is very useful to compare pixels in a small zone, but
+%  much less to compare two random pixels of an image.
+
+% CNN uses convolutions, which are local operations, which act on neighbor pixels. And
+% patterns on images are also local : if you want to detect a line on the image, you need
+% to see if there is a continuous pattern of pixels of the same color, bordered by a
+% different color.
+
+%  It is, at the same time, penetrating into other fields, drug-discovery being one of
+%  them \cite{Chen2018}. 
+
+
+%  When it comes to the methodology it exists an orthogonal problem [regarding
+%  strcutured data] when we deal with biological data.
+
+%  { \color{gray} If we look at the case of deep learning for CV, where we deal with
+%  images, a key element of any architecture for it's success was the use of convolutional
+%  layers---one will mostly observe convolutional neural networks (CNNs) when analizying
+%  the state of the art in CV---which introduce a structural a prior based on the
+%  structure of the data\cite{Guo2016}. A similar case can be made for
+%  NLP\cite{Young2018}. On that direction there has been a rising field on the use of
+%  Graph Convolutional Neural Networks (GCNNs)\cite{Wu2019}, and in fact, there have been
+%  several models as such being proposed in the drug design literature \cite{Sun2019}.
+%  [NOTE: Rewrite this last section]}
+
+ %Sign of that is the recent advancements in that direction \cite{Sun2019}.
+ % [There is already a literature on this and I'm gonna talk about it \cite{Sun2019}]
+
+Despite that, new approaches are appearing with the objective of solving those
+ shortcomings. An initial success story is a recent paper \cite{Zhavoronkov2019} where
+ the authors describe a method by which they are able to discover, synthesize, and test
+ in an animal model, inhibitors of discoidin domain receptor 1 (DDR1)—a kinase
+ implicated in fibrosis—in less than two months.
+
+
+Those promising results, albeit encouraging, are just the tip of the iceberg. There is
+still a long way until a model can satisfactorily capture the biological complexity of
+an arbitrary target and produce promising candidates. On top of that, there is an added
+dimension, as such model should account for the variability from patient to patient and
+be able to generate a molecule that accommodates for all the genotypic and phenotypic
+variants. Or otherwise generate different candidates for each of the populations of
+interest. That is especially important for hypercomplex diseases; for example, in
+cancer, where a genotypically heterogeneous tumoral population may appear within a
+single patient \cite{Boland2017}. So the same variant effects arise inside a dynamic
+ecosystem, where a drug that just targets a subpopulation may lead to an evolutionary
+pressure complicating further the treatment outlook \cite{Enriquez-Navas2015}.
+
+There is then a great need to develop models that can be conditioned based on a large
+set of biological factors and meaningfully account for these variations when generating
+a compound or/and evaluating a compound's effect when administered. What is, in other
+words, the need for the wider adoption of precision medicine.
+
+Last of all, in a more holistic view, it is of interest to develop multi-scale models
+that integrate a system's complexity at all different levels. For instance, a model that
+can learn protein-compound interactions---commonly known as the docking problem---while
+at the same time use this information to predict effects of the introduction of the
+compound on the larger protein-protein interaction (PPI) network\cite{Sun2019}.
 
 It exists, then, a need for better mechanisms for detecting better candidates. One of
  the most promising directions is to improve the \emph{in-silico}
@@ -79,69 +145,7 @@ DL has been able to capitalize on the exponential growth of data and the higher
  rise to graph convolutional neural networks (GCNNs)\cite{Wu2019}. GCNNs, then, pose an
  opportunity to drug discovery due to their capacity to deal natively with graph
  data\cite{Sun2019}.
-
-%  at the same time, started penetrating the field of drug discovery \cite{Sun2019}.
-
-%  Its architecture is a great prior to capture an inductive bias of images that fully
-%  connected networks don’t : Images are a 2D structure, and pixels have neighbors, which
-%  are very related to them. Thus it is very useful to compare pixels in a small zone, but
-%  much less to compare two random pixels of an image.
-
-% CNN uses convolutions, which are local operations, which act on neighbor pixels. And
-% patterns on images are also local : if you want to detect a line on the image, you need
-% to see if there is a continuous pattern of pixels of the same color, bordered by a
-% different color.
-
-%  It is, at the same time, penetrating into other fields, drug-discovery being one of
-%  them \cite{Chen2018}. 
-
-
-%  When it comes to the methodology it exists an orthogonal problem [regarding
-%  strcutured data] when we deal with biological data.
-
-%  { \color{gray} If we look at the case of deep learning for CV, where we deal with
-%  images, a key element of any architecture for it's success was the use of convolutional
-%  layers---one will mostly observe convolutional neural networks (CNNs) when analizying
-%  the state of the art in CV---which introduce a structural a prior based on the
-%  structure of the data\cite{Guo2016}. A similar case can be made for
-%  NLP\cite{Young2018}. On that direction there has been a rising field on the use of
-%  Graph Convolutional Neural Networks (GCNNs)\cite{Wu2019}, and in fact, there have been
-%  several models as such being proposed in the drug design literature \cite{Sun2019}.
-%  [NOTE: Rewrite this last section]}
-
- %Sign of that is the recent advancements in that direction \cite{Sun2019}.
- % [There is already a literature on this and I'm gonna talk about it \cite{Sun2019}]
-
-Another of the big challenges is to unify all the aspects of drug-discovery and be able
- to incorporate all the relevant biological information when designing possible
- candidate molecules. An initial success story on that line is a recent paper
- \cite{Zhavoronkov2019} where the authors describe a deep learning method by which they
- are able to discover, synthesize, and test in an animal model, inhibitors of discoidin
- domain receptor 1 (DDR1)—a kinase implicated in fibrosis—in less than two months.
-
-Those promising results, albeit encouraging, are just the tip of the iceberg. There is
-still a long way until a model can satisfactorily capture the biological complexity of
-an arbitrary target and produce promising candidates. On top of that, there is an added
-dimension, as such model should account for the variability from patient to patient and
-be able to generate a molecule that accommodates for all the genotypic and phenotypic
-variants. Or otherwise generate different candidates for each of the populations of
-interest. That is especially important for hypercomplex diseases; for example, in
-cancer, where a genotypically heterogeneous tumoral population may appear within a
-single patient \cite{Boland2017}. So the same variant effects arise inside a dynamic
-ecosystem, where a drug that just targets a subpopulation may lead to an evolutionary
-pressure complicating further the treatment outlook \cite{Enriquez-Navas2015}.
-
-There is then a great need to develop models that can be conditioned based on a large
-set of biological factors and meaningfully account for these variations when generating
-a compound or/and evaluating a compound's effect when administered. What is, in other
-words, the need for the wider adoption of precision medicine.
-
-Last of all, in a more holistic view, it is of interest to develop multi-scale models
-that integrate a system's complexity at all different levels. For instance, a model that
-can learn protein-compound interactions---commonly known as the docking problem---while
-at the same time use this information to predict effects of the introduction of the
-compound on the larger protein-protein interaction (PPI) network\cite{Sun2019}.
-
+ 
     \section*{Aim \& Methods}
 
 The aim of this thesis will be two-fold. One the one side, analyze how the explicit
