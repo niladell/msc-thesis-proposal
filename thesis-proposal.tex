@@ -39,10 +39,10 @@ Drug discovery---the process by which a potential new medicine is identified---i
  estimated cost between 2 and 3 billion USD \cite{Schneider2019, Scannell2012}, with
  only 1 out of 10000 synthesized molecules obtaining market approval. Many of these
  dropouts happening at the early stages of the entire process.
- {\color{red}Subsequently}, there is a need for tools that enable us to identify better
+ Subsequently, there is a need for tools that enable us to identify better
  drug candidates.
 
-One of the most promising directions is to improve the \emph{in-silico} methods; which
+One of the most promising directions is to improve the \emph{in-silico} methods, which
  are relatively cheap and quick, making them an interesting solution. \emph{In-silico}
  simulations then cover two main aspects: \textbf{predictive modelling}, meaning
  modeling the dynamics of the human body---such that any effect relevant to the drug or
@@ -108,12 +108,12 @@ Finally, from a more holistic perspective, it is of interest to develop multi-sc
     \section*{Aim \& Methods}
 
 
-The aim of this thesis has two distinct though interconnected objectives. One the one
- hand, analyze how the explicit use of GCNNs may open new opportunities when dealing
- with biological and chemical data. On the other hand, explore how modeling the biology
- at different scales (e.g. molecular structure v.s. molecular interaction network) may
- help create better models and, additionally, evaluate how these different scales may be
- integrated.
+The aim of this thesis has two distinct though interconnected objectives. On the one
+ hand, to analyze how the explicit use of GCNNs may open new opportunities when dealing
+ with biological and chemical data. On the other hand, to explore how modeling the
+ biology at different scales (e.g. molecular structure v.s. molecular interaction
+ network) may help to create better models, and, additionally, to evaluate how these
+ different scales may be integrated.
 
 The project would be based on the ideas about GCNNs for drug discovery in presented
  literature \cite{Sun2019}, which will be expanded and tested in a wider framework for
@@ -121,27 +121,27 @@ The project would be based on the ideas about GCNNs for drug discovery in presen
  areas of application appear. One of them is to re-design the generative model, for
  instance by reframing the variational autoencoders used for molecule generation to
  architectures that operate over graphs \cite{Simonovsky2018,Li2018, Li2018a}. The
- second area is to improve the predictive model, by finding better ways to asses the
- activity of these molecules and assess their relevance as drug candidates. In the
- specific case of the mentioned drug discovery framework, it is done by using a critic
- network \cite{Manica2019}, which can be expanded on a set of different fronts. Those
- would be: using structural data instead of SMILES\footnote{http://opensmiles.org/}
- \cite{Li, Do2019}, {\color{red} by using GCNNs on the PPI networks in a manner that
- allows for a more effective way to extract the information from them}
- \cite{Oskooei2019, Wang2019}, or by introducing particular scores (rewards) based in
- the interaction of the compound to certain targets \cite{YingkaiGao2018,
- Zhavoronkov2019} or the combination of the compound with other drugs \cite{Zitnik2018}.
- All these possible changes to the critic model would apply at different abstraction
- levels, that opens the door to integrating the representations learnt at those
- different levels in a single model \cite{Ying2018, Ma2019, Huang2019}. Furthermore,
- this integration could be then leveraged on the drug generation part of the framework.
+ second area is to improve the predictive model, by finding better ways to assess the
+ activity of these molecules and their relevance as drug candidates. In the specific
+ case of the mentioned drug discovery framework, it is done by using a critic network
+ \cite{Manica2019}, which can be expanded on a set of different fronts. Those would be:
+ using structural data instead of SMILES\footnote{http://opensmiles.org/} \cite{Li,
+ Do2019}, using GCNNs on the PPI networks in a manner that allows for a more effective
+ way to extract the information from them \cite{Oskooei2019, Wang2019}, or introducing
+ particular scores (rewards) based in the interaction of the compound to certain targets
+ \cite{YingkaiGao2018, Zhavoronkov2019} or the combination of the compound with other
+ drugs \cite{Zitnik2018}. All these possible changes to the critic model would be
+ applied to different abstraction levels, that opens the door to integrating the
+ representations learnt at those different levels in a single model \cite{Ying2018,
+ Ma2019, Huang2019}. Furthermore, this integration could be then leveraged on the drug
+ generation part of the framework.
 
 %  This precise work will be focused on exploring all these concepts in the context of
 %  designing anti-cancer drugs. 
 
-{\color{red}The proposed ideas will be done in the context of designing anticancer
- compounds.} The work will be done in collaboration with the Computational Systems
- Biology group at IBM Research (Zurich), currently part of the iPC
+The proposed ideas will be done in the context of designing anticancer compounds. The
+ work will be done in collaboration with the Computational Systems Biology group at IBM
+ Research (Zurich), currently part of the iPC
  consortium\footnote{https://ipc-project.eu/}. As part of such, an end goal of this
  project is for its results to help in the consortium efforts on pediatric cancer. For
  instance in contributing to the ongoing research in neuroblastoma, the most common type
@@ -159,7 +159,7 @@ The data from this project will be obtained from multiple sources including, but
 The novel predictive model will be evaluated against empirically measured properties of
  drugs in the mentioned data sources. Furthermore, the model's performance will be
  compared to that of other models in the literature. For example, by comparing IC50
- prediction values for cell-drug pairs (unseen during training) to the empirically
+ prediction values for cell-drug pairs (unseen during training) with the empirically
  measured values from the data sources, as done in \cite{Oskooei2019, Joo2019,
  Oskooei2018}. Another prospective set of benchmarks to be used are those proposed by
  MoleculeNet \cite{Wu2018}.
@@ -177,7 +177,7 @@ Previous work \cite{Theis2016} has discussed how different metrics measure diffe
  incorporating elements like the mentioned FCD score, so it will be explored as a
  benchmark for this project.
  
- Lastly, a natural final step for the entire evaluation of the system would be the actual
+Lastly, a natural final step for the entire evaluation of the system would be the actual
  in-vitro synthesis of the generated compounds, as done in \cite{Zhavoronkov2019}.
  However, the complexity of carrying out that evaluation will likely make it far too
  ambitious for what the scope of this project is.
